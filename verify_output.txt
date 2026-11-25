@@ -1,4 +1,4 @@
-﻿# Twin-prime certificate run log
+# Twin-prime certificate run log
 date_utc: 2026-11-25T17:12:42Z
 python: Python 3.13.2
 script_md5: C4EEB453470EF93BCDD11B6CFCBA19F1
