@@ -72,3 +72,21 @@ pdflatex paper.tex
 1. **Published Chen lower bound:** Runbo Li, *Mathematical Reports* **28** (2026), no. 1--2, 39--61 ([arXiv:2405.05727v4](https://arxiv.org/abs/2405.05727v4), Theorem 1.3): $\pi_{1,2}(x) \ge 1.2759\,C_2 x / (\log x)^2$.
 2. **Distribution level $5/8$:** Alexandru Pascadi, *On the exponents of distribution of primes and smooth numbers* ([arXiv:2505.00653v1](https://arxiv.org/abs/2505.00653v1), Proposition 4.4 / eq. (4.15)).
 3. **AI-assisted workflow note:** The mathematical derivation, integer certificate implementation, and multi-pass adversarial auditing were carried out in an AI-assisted human-directed workflow; all numerical bounds are independently verified by `verify_twin_upper_sieve_cert.py`.
+
+## How to cite
+
+```bibtex
+@misc{wei2026twin,
+  author       = {Wei, Lindong},
+  title        = {A Self-Contained Proof of Proposition (1--1.67539) for the Twin Prime Problem},
+  year         = {2026},
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.24539533},
+  url          = {https://doi.org/10.5281/zenodo.24539533}
+}
+```
+
+Plain text: Wei Lindong, *A Self-Contained Proof of Proposition (1-1.67539) for the Twin Prime Problem*, v1.0.0, Zenodo (2026), doi:10.5281/zenodo.24539533.
+
+To cite all versions of this project, use the concept DOI: doi:10.5281/zenodo.24539532.
