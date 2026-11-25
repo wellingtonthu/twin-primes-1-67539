@@ -4,6 +4,7 @@ title: "A Self-Contained Proof of Proposition (1 - 1.67539) for the Twin Prime P
 type: software
 repository-code: "https://github.com/wellingtonthu/twin-primes-1-67539"
 doi: "10.5281/zenodo.24539533"
+url: "https://aixiv.science/abs/aixiv.261125.000002"
 authors:
   - family-names: "Wei"
     given-names: "Lindong"

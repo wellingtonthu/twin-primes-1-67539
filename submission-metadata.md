@@ -35,6 +35,12 @@ For 1 <= a <= 2, Proposition (1-a) asserts that there exist infinitely many prim
 
 For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely many primes $p$ such that $p+2 = rq$ with $q$ prime, $r=1$ or prime, and $r \le q^{a-1}$. Li and Liu recently established Proposition $(1-1.75)$ unconditionally. By combining Runbo Li's published lower bound $\pi_{1,2}(x) \ge 1.2759\,C_2 x/(\log x)^2$ with a self-contained positive upper-sieve majorant at distribution level $5/8$ and a directed pure-integer interval certificate at denominator $2^{80}$, we prove Proposition $(1-1.67539)$ unconditionally. More precisely, writing $A_b(x)$ for the number of primes $p \le x$ satisfying $p+2 = rq$ with $r \le q^b$, we obtain $A_{67539/100000}(x) > 0.0000466\,C_2 x/(\log x)^2$ for all sufficiently large $x$.
 
+## Published versions
+
+- aiXiv: `aixiv.261125.000002` — <https://aixiv.science/abs/aixiv.261125.000002> (v1.0, CC-BY-4.0)
+- Zenodo: `10.5281/zenodo.24539533` (v1.0.0; concept DOI `10.5281/zenodo.24539532`)
+- arXiv: pending
+
 ## Files to upload
 
 - arXiv: `arxiv-src.zip` (contains only `paper.tex`; no bibliography file needed, no figures).
