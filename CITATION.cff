@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this manuscript or certificate verifier, please cite it as below."
 title: "A Self-Contained Proof of Proposition (1 - 1.67539) for the Twin Prime Problem"
 type: software
+repository-code: "https://github.com/wellingtonthu/twin-primes-1-67539"
 authors:
   - family-names: "Wei"
     given-names: "Lindong"
