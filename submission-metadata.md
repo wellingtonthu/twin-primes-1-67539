@@ -15,6 +15,7 @@ Proposition (1-1.67539) for Twin Primes
 - Name: Wei Lindong
 - Affiliation: Independent Researcher
 - Email: 744140495@qq.com
+- ORCID: 0009-0008-9652-2845
 
 ## arXiv classification
 
