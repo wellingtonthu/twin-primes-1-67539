@@ -6,3 +6,5 @@ __pycache__/
 *.toc
 *.synctex.gz
 .DS_Store
+# local promotion draft, not part of the public record
+知乎文章草稿.md
