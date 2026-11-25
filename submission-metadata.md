@@ -37,7 +37,7 @@ For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely man
 
 ## Published versions
 
-- aiXiv: `aixiv.261125.000002` — <https://aixiv.science/abs/aixiv.261125.000002> (v1.0, CC-BY-4.0)
+- aiXiv: `aixiv.261125.000002` — <https://aixiv.science/abs/aixiv.261125.000002> (v1.0 lists the LaTeX source by mistake; v1.1 under review carries the correct 11-page PDF: <https://aixiv.science/pdf/aixiv.261125.000002v1.1.pdf>, CC-BY-4.0)
 - Zenodo: `10.5281/zenodo.24539533` (v1.0.0; concept DOI `10.5281/zenodo.24539532`)
 - arXiv: pending
 
