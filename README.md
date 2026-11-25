@@ -1,5 +1,7 @@
 # Proposition $(1 - 1.67539)$ on Twin Primes
 
+**Author:** Wei Lindong (Independent Researcher) · **Code license:** MIT · **Manuscript / PDF license:** CC BY 4.0
+
 Unconditional, self-contained proof and pure-integer directed certificate establishing **Proposition $(1 - 1.67539)$**: for every sufficiently large $x$, more than $0.0000466\,C_2 x / (\log x)^2$ primes $p \le x$ satisfy
 
 $$p + 2 = rq, \qquad q \text{ prime},\quad r \in \{1\} \cup \mathbb{P},\quad r \le q^{0.67539},$$
