@@ -1,0 +1,430 @@
+\documentclass[11pt,reqno]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\normF}{\widetilde{F}}
+\newcommand{\normf}{\widetilde{f}}
+\newcommand{\normD}{\widetilde{D}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cT}{\mathcal{T}}
+
+\numberwithin{equation}{section}
+
+\title[On Proposition $(1-1.67539)$ for the Twin Prime Problem]{A Self-Contained Proof of Proposition $(1-1.67539)$\\ for the Twin Prime Problem}
+
+% Replace with author details before arXiv or journal submission.
+\author{[Author Name]}
+\address{[Institution / Affiliation]}
+\email{[email@example.org]}
+
+\date{November 26, 2026}
+
+\subjclass[2020]{Primary 11N36; Secondary 11N05, 11P32}
+\keywords{Twin prime problem, Chen's theorem, weighted sieve, level of distribution, directed integer certificate}
+
+\begin{document}
+
+\begin{abstract}
+For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely many primes $p$ such that $p+2 = rq$ with $q$ prime, $r=1$ or prime, and $r \le q^{a-1}$. Li and Liu recently established Proposition $(1-1.75)$ unconditionally. By combining Runbo Li's published lower bound $\pi_{1,2}(x) \ge 1.2759\,C_2 x/(\log x)^2$ with a self-contained positive upper-sieve majorant at distribution level $5/8$ (derived from Pascadi's fixed-residue convolution estimate) and a directed pure-integer interval certificate at denominator $2^{80}$, we prove Proposition $(1-1.67539)$ unconditionally. More precisely, writing $A_b(x)$ for the number of primes $p \le x$ satisfying $p+2 = rq$ with $r \le q^b$, we obtain $A_{67539/100000}(x) > 0.0000466\,C_2 x/(\log x)^2$ for all sufficiently large $x$. We also record an elementary one-page two-factor shortcut yielding Proposition $(1-1.7078)$ and a rank-three baseline yielding Proposition $(1-1.6767)$.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction and main results}\label{sec:intro}
+
+Let
+\[
+C_2 := 2\prod_{\ell > 2}\left(1 - \frac{1}{(\ell-1)^2}\right) \approx 1.3203236317,
+\qquad
+H(x) := \frac{C_2 x}{(\log x)^2},
+\]
+where $\ell$ runs over primes. For $0 < b \le 1$, let $A_b(x)$ count the number of primes $p \le x$ admitting a representation
+\[
+p + 2 = rq,
+\]
+where $q$ is prime, $r$ is either $1$ or prime, and $r \le q^b$. In the notation of Li and Liu~\cite{LiLiu2026}, Proposition $(1-a)$ ($1 \le a \le 2$) states that $A_{a-1}(x) \to \infty$ as $x \to \infty$; thus $a=2$ corresponds to Chen's theorem~\cite{Chen1973} and $a=1$ corresponds to the twin prime conjecture.
+
+In~\cite[Theorem~1.2]{LiLiu2026}, Li and Liu proved Proposition $(1-1.75)$ unconditionally, obtaining
+\[
+A_{3/4}(x) > 0.036\,H(x)
+\]
+for sufficiently large $x$. Under a weighted Elliott--Halberstam conjecture $\mathrm{WEH}(0.999)$, they improved the exponent to $(1-1.4)$~\cite[Theorem~1.4]{LiLiu2026}. Our main result strengthens the unconditional bound from $1.75$ to $1.67539$.
+
+\begin{theorem}\label{thm:main}
+Proposition $(1-1.67539)$ holds unconditionally. Specifically, for $b = 67539/100000$,
+\begin{equation}\label{eq:main_margin}
+\liminf_{x\to\infty}\frac{A_b(x)}{H(x)}
+\ \ge\ \frac{56380964408304863785}{1208925819614629174706176}
+\ >\ 0.0000466.
+\end{equation}
+In particular, $A_{67539/100000}(x) > 0.0000466\,H(x)$ for every sufficiently large $x$. Without the fourth-rank cap replacement, the rank-three construction alone establishes Proposition $(1-1.6767)$, while an elementary two-factor shortcut proves Proposition $(1-1.7078)$.
+\end{theorem}
+
+\subsection{Comparison with related work}
+It is helpful to distinguish Theorem~\ref{thm:main} from related results on shifted primes $p+2$:
+\begin{itemize}
+\item \emph{Chen's theorem density.} Runbo Li~\cite[Theorem~1.3]{RunboLi2026} established the lower bound $\pi_{1,2}(x) \ge 1.2759\,H(x)$ for $\pi_{1,2}(x) = \#\{p \le x : p+2 \in P_2\}$, using Pascadi's distribution results~\cite{Pascadi2025}. Our proof uses Li's $1.2759$ lower bound directly as a modular input.
+\item \emph{Largest prime factor.} Baker and Harman~\cite{BakerHarman1996} (discussed in~\cite[\S 1.4]{LiLiu2026}) showed that $P^+(p+2) > p^{0.676}$ infinitely often, giving $p+2 = rq$ with $q$ prime and $r \le p^{0.324} \le q^{0.48}$. However, the cofactor $r$ in Baker--Harman's theorem is an arbitrary integer that may have three or more prime factors, whereas Theorem~\ref{thm:main} retains Chen's condition $\Omega(p+2) \le 2$ ($r=1$ or $r$ prime).
+\item \emph{Twin-prime upper bounds and Goldbach analogues.} Building on Lichtman~\cite{Lichtman2023} (who obtained $3.229\,H(x)$ at level $66/107$), Pascadi~\cite[Corollary~1.4]{Pascadi2025} proved $\pi_2(x) \le (3.203 + o(1))H(x)$ using an unconditional $5/8$ distribution level~\cite[Proposition~4.4 and Theorem~5.4]{Pascadi2025}. Here we construct an explicit positive upper-sieve majorant adapted to $5/8$, prove its progression distribution estimate on prime pairs $rq$, and subtract the resulting upper bound for excluded semiprimes $q^b < r \le q$ from Runbo Li's Chen lower bound.
+\end{itemize}
+
+\subsection{Inputs and organization}
+The external analytic inputs are Runbo Li's Theorem~1.3~\cite{RunboLi2026}; Pascadi's fixed nonzero residue convolution estimate~\cite[Proposition~4.4]{Pascadi2025} (which itself relies on Deshouillers--Iwaniec~\cite{DeshouillersIwaniec1982}, Watt, and Pascadi's exceptional Maass-form large sieve); Iwaniec's well-factorable linear Rosser sieve and the fundamental lemma~\cite{Iwaniec1980,Iwaniec1980b,FriedlanderIwaniec2010}; and the classical prime number theorem, Mertens's estimates, prime and M\"obius Siegel--Walfisz bounds, the multiplicative large sieve, and the Weil bound for Kloosterman sums. No external distribution theorem or density bound for the constructed coefficient is assumed.
+
+In the remainder of Section~\ref{sec:intro}, we reduce $A_b(x)$ to subtracting the bad semiprimes $B_b(x)$ and present the one-page shortcut to $(1-1.7078)$. Section~\ref{sec:tree} defines the rank-three and rank-four upper-sieve trees and proves the pointwise first-exit identity. Section~\ref{sec:packing} verifies the capacity conditions for Pascadi~\cite[eq.~(4.15)]{Pascadi2025} (including the $C<1$ two-factor repair and three-slot $W$ packing) and realizes a single finite signed coefficient $\rho_x$. Section~\ref{sec:distribution} establishes the uniform prime-pair distribution estimate for $\rho_x$ at fixed residue $2$. Sections~\ref{sec:density} and~\ref{sec:bad_pairs} compute the limiting density, bound the small-prime tail, and transfer the majorant to $B_b(x)$. Section~\ref{sec:certificate} describes the standalone integer certificate script \texttt{verify\_twin\_upper\_sieve\_cert.py} and records the certified rational bounds.
+
+\subsection{The subtraction identity and an elementary shortcut}
+Let $B_b(x)$ count the primes $p \le x$ such that $p+2 = rq$ with $r,q$ prime and $q^b < r \le q$. Ordering the two prime factors ensures that every composite $P_2$ remainder has a unique factorization $r \le q$ (squares contribute to $B_b$), while prime remainders ($r=1$) belong to $A_b$. Allowing for at most one exception at $p=2$, Runbo Li's lower bound~\cite[Theorem~1.3]{RunboLi2026} gives
+\begin{equation}\label{eq:sub}
+\liminf_{x\to\infty}\frac{A_b(x)}{H(x)}
+\ \ge\ \frac{12759}{10000} - \limsup_{x\to\infty}\frac{B_b(x)}{H(x)}.
+\end{equation}
+
+In odd moduli $d$, the congruence $rq-2 \equiv 0 \pmod d$ reads $rq \equiv 2 \pmod d$. The two-prime sequence has local density $g(\ell) = 1/(\ell-1)$ for odd primes $\ell$, with no factor at $2$. Since $(1-g(\ell))/(1-1/\ell) = 1 - (\ell-1)^{-2}$, putting $P(y) = \prod_{2 < \ell < y}\ell$ and $V(y) = \prod_{2 < \ell < y}(1-g(\ell))$ yields
+\begin{equation}\label{eq:mertens_V}
+V(x^t) \sim \frac{e^{-\gamma}C_2}{t\log x}
+\end{equation}
+uniformly for $t$ in any positive compact interval. The factor $2$ from omitting $\ell=2$ is already contained in $C_2$, matching~\cite[(6.6)--(6.10)]{LiLiu2026} and~\cite[Corollary~1.4]{Pascadi2025}.
+
+\begin{proposition}[Two-factor shortcut]\label{prop:shortcut}
+Proposition $(1-1.7078)$ holds unconditionally; more precisely, for $b = 3539/5000$,
+\[
+\liminf_{x\to\infty}\frac{A_b(x)}{H(x)}
+\ \ge\ \frac{377883443722357593132}{1208925819614629174706176}
+\ >\ 0.000312.
+\]
+\end{proposition}
+
+\begin{proof}
+We apply Li and Liu's fixed-residue bilinear distribution lemma~\cite[Lemma~3.4]{LiLiu2026} (originating in Bombieri--Friedlander--Iwaniec and Wu) to one-bounded well-factorable modulus weights. Take $N$ in that lemma to be the shorter dyadic scale (corresponding to $r$); prime indicators satisfy its Siegel--Walfisz and roughness hypotheses. In the region $q^b < r \le q$ with $rq \asymp X$ and $b > 2/3$, we have $\nu := \log N/\log X \in [2/5, 1/2]$ for large $x$, allowing bounded dyadic endpoint errors and choosing the smaller scale if $r$ exceeds $q$ near the diagonal. The table in~\cite[Lemma~3.4]{LiLiu2026} gives distribution exponent $1 - \nu - \epsilon$. On each dyadic chart we apply the ordinary one-bounded well-factorable upper linear sieve (Section~\ref{sec:packing} below shows how to realize this greedily atom-by-atom via a single constant cubic cap below $1-\nu-\epsilon$, reserving the small-prime attachment $x^{\sqrt{\eta}}$ in the larger group). With $t = \log r/\log x$ and sifting threshold at a third of the level exponent,~\eqref{eq:mertens_V} and $F(3) = 2e^\gamma/3$ yield limiting upper density $2/(1-t)$ in units of $C_2/\log x$ after letting fixed reserves tend to zero. Smooth separation as in Section~\ref{sec:distribution} preserves prime Siegel--Walfisz by partial summation. The region $rq < \sigma x$ contributes $O(\sigma H(x))$ using a fixed level $1/2$ after discarding $rq < x/(\log x)^5$. Integrating against $dt/(t(1-t))$ gives
+\[
+\limsup_{x\to\infty}\frac{B_b(x)}{H(x)}
+\ \le\ \int_{b/(1+b)}^{1/2}\frac{2\,dt}{t(1-t)^2}
+\ =\ 2(1 - b - \log b),
+\]
+since an antiderivative of $1/(t(1-t)^2)$ is $\log(t/(1-t)) + (1-t)^{-1}$. Substituting into~\eqref{eq:sub} and evaluating at $b = 3539/5000$ via Section~\ref{sec:certificate} completes the proof.
+\end{proof}
+
+\section{The positive upper-sieve tree and cap rules}\label{sec:tree}
+
+Write $L = \log x$, $\rho = 1/5$, $T = 5/8$, and
+\[
+v(u) := \min\left\{\frac{1+u}{2},\, 1 - \frac{3u}{2}\right\}.
+\]
+Order the prime factors of any odd squarefree modulus decreasingly as $\ell_1 > \ell_2 > \dots > \ell_r > 2$, and set $t_i = \log \ell_i/L$ and $S_j = \sum_{i \le j} t_i$ ($S_0 = 0$). Fix a root cutoff $\rho' < \rho$ arbitrarily close to $\rho$. An odd-rank prefix $(\ell_1,\dots,\ell_j)$ is retained precisely when its local cubic test satisfies $S_{j-1} + 3t_j < \lambda$, where $\lambda$ is the current cap; every even child of a retained odd prefix is retained automatically.
+
+We start at rank one with cap $T$. At rank three, writing $(t_1,t_2,t_3)$ before testing the third cube, replace the cap by the ideal third-rank cap $J(t_1,t_2,t_3)$, defined as the maximum of:
+\begin{itemize}
+\item $v(t_1)$, $v(t_1+t_2)$, and $v(t_1+t_2+t_3)$;
+\item $v(t_1+t_3)$, if $v(t_1+t_3) > t_1 + t_3 + 2t_2$;
+\item $v(t_2+t_3)$, if $v(t_2+t_3) > t_2 + t_3 + 2t_1$;
+\item $\min\{5/8 - 3t_3/8,\, 1 - 2t_2\}$.
+\end{itemize}
+Notice the explicit $1 - 2t_2$ guard in the last branch, which is essential here since $2\rho = 2/5 > 1 - 5/8$. No unguarded nonleading complementary square is used.
+
+At an admitted rank-four prefix $t = (t_1,t_2,t_3,t_4)$ with $t_4 \ge 3/100$, examine every subset $I \subseteq \{1,2,3,4\}$ containing $4$ and at least one other index, and put $u_I := \sum_{i \in I} t_i$. Raise the inherited cap to the largest $M = v(u_I) > J$ over those candidates satisfying
+\begin{equation}\label{eq:rank4_guard}
+u_I + \sum_{\substack{i < j\\ i \notin I}} t_i + 2t_j < M \qquad (j \le 4,\ j \notin I).
+\end{equation}
+If no candidate satisfies~\eqref{eq:rank4_guard}, retain $J$. Since rank four is even, this update occurs without a retention test at rank four. All subsequent odd ranks use the inherited cap. In Section~\ref{sec:packing}, strictly lowered piecewise-constant versions of these ideal caps will be frozen for the arithmetic construction.
+
+\begin{lemma}[First-exit identity]\label{lem:first_exit}
+For any finite prime set and any multiplicative function $g$ satisfying $0 \le g(\ell) \le 1$, the retained prefix tree $\cT$ satisfies
+\begin{equation}\label{eq:first_exit}
+\sum_{d \in \cT}\mu(d)g(d)
+= \prod_\ell (1 - g(\ell))
++ \sum_{e\ \mathrm{first\ omitted\ prefix}} g(e)\prod_{\ell < \ell_{\mathrm{last}}(e)}(1 - g(\ell)).
+\end{equation}
+In particular, taking $g(\ell) = \ind_{\ell \mid n}$ shows that $\sum_{d \mid n,\, d \in \cT}\mu(d) \ge \ind_{(n,\prod\ell)=1} \ge 0$ for every integer $n$.
+\end{lemma}
+
+\begin{proof}
+Every divisor $d \notin \cT$ has a unique first omitted prefix $e$, which necessarily has odd rank so that $\mu(e) = -1$. Summing $\mu(d)g(d)$ over all squarefree continuations of $e$ by primes $\ell < \ell_{\mathrm{last}}(e)$ yields $-g(e)\prod_{\ell < \ell_{\mathrm{last}}(e)}(1-g(\ell))$. Subtracting these disjoint sums from $\prod_\ell(1-g(\ell))$ gives~\eqref{eq:first_exit}. Raising a cap after an even prefix or selecting it before its own odd test preserves the odd parity of every first exit.
+\end{proof}
+
+\section{Capacity packing and finite realization}\label{sec:packing}
+
+For a slot index $j$, the \emph{full square} is $S_{j-1} + 2t_j$. For a selected index subset $I$, the \emph{complementary squares} are $u_I + \sum_{i<j,\, i\notin I} t_i + 2t_j$ for $j \notin I$, as in~\eqref{eq:rank4_guard}; after the largest index of $I$, each complementary square coincides with the full square. Any passing odd cube $S_{j-1} + 3t_j < \lambda$ implies both its own full square and the next full square $S_j + 2t_{j+1} \le S_{j-1} + 3t_j < \lambda$.
+
+For the initial checks of $J$: the first two full squares are bounded by $3t_1$, while $v(t_1) = (1+t_1)/2 > 3t_1$ holds strictly for all $t_1 < 1/5$. Moreover, a passing third cube controls both the third and fourth full squares even if the rank-four cap is subsequently raised. For $I=\{1\}$, complementary squares reduce to full squares; for $I=\{1,2\}$, the only complementary square up to rank three is a full square; for $I=\{1,2,3\}$, there is none; for $I=\{1,3\}$ and $I=\{2,3\}$, the sole extra square is explicitly guarded in the definition of $J$; and for rank four,~\eqref{eq:rank4_guard} enforces every extra square directly. These inequalities persist under appending smaller primes.
+
+\begin{lemma}[Greedy modulus packing]\label{lem:packing}
+Let $X$ be the complete product scale, and let $U$ be a selected medium-variable scale satisfying $X^{2\zeta} \le U \le X^{1/3+\zeta/2}$, with $0 < \zeta < 10^{-5}$ sufficiently small. Convert exponents to base $X$, let $\ell$ be a covering exponent, and put $D = X^{\ell - 2\zeta}$ and $A = U X^{-\zeta}$. Suppose all full and complementary squares for a box atom are at most $\ell$, and that one of the following holds:
+\begin{enumerate}
+\item[(a)] $\ell < v(\beta)$ for a selected subset $I$ of upper endpoint $B = X^\beta$; or
+\item[(b)] $(1+t_1)/2 < \ell < \min\{5/8 - 3t_3/8,\, 1 - 2t_2\}$.
+\end{enumerate}
+Then the atom admits a partition into three modulus groups with upper endpoints $Q_1, Q_2, Q_3 \ge 1$ satisfying Pascadi's system~\cite[eq.~(4.15)]{Pascadi2025}:
+\begin{equation}\label{eq:pascadi_cond}
+Q_1 \le U X^{-\epsilon}, \qquad U^2 Q_2 Q_3^2 \le X^{1 - 15\epsilon}, \qquad U^2 Q_2^5 Q_3^2 \le X^{2 - 40\epsilon},
+\end{equation}
+provided $\epsilon > 0$ is sufficiently small in terms of $\zeta$ and the covering margins.
+\end{lemma}
+
+\begin{proof}
+In case~(a), the condition $\ell < v(\beta)$ is equivalent to
+\begin{equation}\label{eq:beta_interval}
+b_- := 2\ell - 1 < \beta < \frac{2 - 2\ell}{3} =: b_+.
+\end{equation}
+If $C := D/(AB) \ge 1$, place the selected slots $I$ in group two ($Q_2 = B$) and pack the remaining slots greedily in order into capacities $A$ and $C$. If some slot of exponent $s$ fits neither, the product of the remaining capacities is $< X^{2s}$, contradicting the complementary square at that slot. With $(Q_1,Q_2,Q_3) = (A,B,C)$, replacing $U$ by $A X^\zeta$ bounds the two monomials in~\eqref{eq:pascadi_cond} by $X^{2\zeta} D^2/B$ and $X^{2\zeta} D^2 B^3$. By~\eqref{eq:beta_interval}, $D^2/B \le X^{2\ell - 4\zeta - (2\ell-1)} = X^{1-4\zeta}$ and $D^2 B^3 \le X^{2\ell - 4\zeta + 2 - 2\ell} = X^{2-4\zeta}$, leaving fixed power savings $2\zeta$ in both bounds.
+
+If instead $C = D/(AB) < 1$, repack \emph{all} slots greedily into $(A, D/A)$ using the full squares and leave group three empty ($Q_3 = 1$). Note that $A \ge X^\zeta \ge 1$ and $D/A \ge X^{\ell - 1/3 - 7\zeta/2} \ge 1$ since $\ell > 1/2$. Because $Q_2 = D/A < B$, the second monomial $X^{2\zeta} D^2 Q_2^3$ strictly decreases from $X^{2\zeta} D^2 B^3$, while the first becomes $U^2 (D/A) = X^{2\zeta} A D \le X^{1/3 + \ell - 5\zeta/2}$, which stays strictly below $X^{1-4\zeta}$ since $\ell \le 5/8 + o(1)$ and $1/3 + 5/8 = 23/24 < 1$. (This is the same two-factor repair as~\cite[Lemma~5.6]{Pascadi2025}.)
+
+In case~(b), initialize capacities $(A, X^{b_-}, D/(AX^{b_-}))$. If the third capacity is below $1$, apply the same two-group repair into $(A, D/A)$. Otherwise, place the largest prime in group two (since $t_1 < 2\ell - 1 = b_-$). The second prime fits into group one or three because the product of their capacities is $X^{1 - \ell - 2\zeta}$ and $2t_2 < 1 - \ell$ with a strict reserve. Continue inserting slots greedily in order. If all fit,~\eqref{eq:beta_interval} gives~\eqref{eq:pascadi_cond}. At the first slot $\ell_j$ of exponent $s \le t_3$ that fits no group, adjoin $\ell_j$ to group two, obtaining a new product $B'$ with exponent in $[b_-, b_- + t_3]$. Since $b_+ - b_- = (5 - 8\ell)/3 > t_3$,~\eqref{eq:beta_interval} still holds for $B'$. Moreover, if $(a_1,a_2,a_3)$ were the partial products before $\ell_j$, then $A < a_1 X^s$ and the full square gives $a_1 a_2 a_3 X^{2s} \le D$, whence $A B' a_3 < D$ for $B' = a_2 X^s$. Thus $a_3$ fits inside $D/(A B')$, and freezing group two lets the remaining slots be packed into groups one and three via the full squares. Both monomial bounds in~\eqref{eq:pascadi_cond} follow as before.
+\end{proof}
+
+\begin{remark}
+In the finite realization below, small-prime weights up to $x^{\sqrt{\eta}}$ are attached to group three; choosing $\eta$ sufficiently small relative to the covering reserves absorbs an extra $x^{\sqrt{\eta}}$ factor in $Q_3$ into the strict margins of~\eqref{eq:pascadi_cond}.
+\end{remark}
+
+\subsection{Construction of a single finite coefficient}
+Fix a small density allowance $u_0 > 0$, a root cutoff $\rho' < \rho$, and a tail cutoff $\delta_0 > 0$ for $t_3$. On the compact third-rank domain, partition into sufficiently small grid cells and freeze branch labels and lower caps to constants with strict reserves away from switching walls, near-equality of guards, and near-ties with the fallback. At omitted walls and for $t_3 < \delta_0$ use the fallback $v(t_1)$ lowered by a small fixed amount; near $t_1 = 0$ use an ordinary cap strictly below $1/2$ so that all moduli there stay below $x^{1/2-\epsilon_0}$. This maintains a uniform positive gap above $t_1 + t_2$, since the ideal baseline satisfies $J - t_1 - t_2 \ge (1 - 3\rho)/2 = 1/5$. At rank four, restrict to finitely many cells with strict admissibility, trim near equalities, and freeze the lowered new cap where it improves the parent. Every retained branch selects a covering exponent $\ell$ strictly between its physical cap and ideal bound; in all branches the physical cap never exceeds $T = 5/8$.
+
+Next fix $\eta > 0$ sufficiently small and restrict the tree to primes $\ell \ge x^\eta$; its rank is bounded by a constant $J_\eta$. Refine a common finite alphabet of half-open exponent intervals so that all covering reserves hold on upper box endpoints, deciding odd cubes on upper endpoints and retaining even children automatically. For each rough atom of sign $+$ or $-$, attach the ordinary upper ($\lambda^+$) or lower ($\lambda^-$) small-prime weights on $\ell < x^\eta$ of support at most $x^{\sqrt{\eta}}$ and $|\lambda^\pm| \le 1$. By the fundamental lemma, small-prime density equals $V(x^\eta)(1 + O(e^{-c/\sqrt{\eta}}))$ uniformly in $x$, while the absolute rough density is $O(1/\eta)$, giving attachment error $O(e^{-c/\sqrt{\eta}}\eta^{-2} C_2/L)$. Moreover, since
+\[
+\lambda^-(n) \le \ind_{(n, P(x^\eta))=1} \le \lambda^+(n) \qquad (\forall n \in \mathbb{Z}),
+\]
+multiplying by the atom's sign and rough indicator produces a pointwise majorant of the rough-tree sum times $\ind_{(n,P(x^\eta))=1}$, hence majorizes $\ind_{(n,P(x^{\rho'}))=1}$ by Lemma~\ref{lem:first_exit}. Unique prime factorization across $x^\eta$ ensures $|\rho_x(d)| \le 1$, supported on odd squarefree $d \le x^{5/8+\sqrt{\eta}}$, while rough pieces of rank $\le 2$ (and the small-$t_1$ branch) have support $\le x^{2\rho+\sqrt{\eta}} \le x^{1/2-\epsilon_0}$ for small $\eta, \epsilon_0$.
+
+By Lemma~\ref{lem:first_exit}, multiplying the unrounded rough-tree density by $V(x^\eta)$ isolates the subset of full exits whose last prime is $\ge x^\eta$, which is at most the full unrounded density. For fixed $\eta$, refining the common alphabet reduces the discrepancy to $O_{\mathrm{mesh}\to 0}(C_2/L)$ via Mertens's harmonic measure $dt/t$ on finitely many compact cells.
+
+Finally, for each rough atom with interval multiplicities $m_I$, its ordered squarefree coefficient equals $\ind_{\mathrm{sf}}\,\mathcal{N}/\prod_I m_I!$, where $\mathcal{N}$ is the unrestricted interval convolution. Dividing each of the three packed groups by its own $\prod_I m_{I,j}!$ makes every group coefficient $1$-bounded even on repeated primes, leaving a fixed external scalar. Attaching $\lambda^\pm$ to group three preserves $1$-boundedness by disjoint prime universes. Removing the global squarefree restriction only during analytic comparison introduces a progression error at most
+\begin{equation}\label{eq:sf_error}
+x^{o(1)} \sum_{\substack{d \le x^{5/8+\sqrt{\eta}}\\ \exists \ell \ge x^\eta:\, \ell^2 \mid d}} \left(\frac{x}{d} + 1 + \frac{x}{\varphi(d)}\right)
+\ \ll\ x^{1 - \eta + o(1)},
+\end{equation}
+which handles $rq - 2 = 0$ as well (no divisor bound at zero is needed).
+
+\section{Distribution on prime pairs}\label{sec:distribution}
+
+Set $\Delta_d(n) := \ind_{n \equiv 2 \pmod d} - \ind_{(n,d)=1}/\varphi(d)$.
+
+\begin{proposition}\label{prop:distribution}
+Let $\rho_x$ be the finite signed coefficient family constructed in Section~\ref{sec:packing} with fixed reserves, and let $a_* > 0$. For any smooth weight $w(r,q)$ supported on $r,q \gg x^{a_*}$ and $rq = O(x)$ whose mixed Euler derivatives are bounded by fixed powers of $L = \log x$, we have
+\begin{equation}\label{eq:distrib}
+\sum_d \rho_x(d) \sum_{r,q\ \mathrm{prime}} w(r,q)\Delta_d(rq)
+\ =\ O_A(x L^{-A}) \qquad (\forall A > 0).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Smoothly discard products $rq < 2x^{1-\kappa}$ for a very small $\kappa > 0$; this costs $x^{1-\kappa+o(1)}$ using $\tau(rq-2)$ ($rq-2 \ne 0$ for large $x$) and $\sum_{d\ll x}1/\varphi(d)\ll L$. On each remaining dyadic chart of product scale $X \gg x^{1-\kappa}$, choose $\kappa$ small relative to all reserves so that base-$X$ exponents preserve Lemma~\ref{lem:packing}, and total support is $D_0 \le X^{5/8+\xi}$ for an arbitrarily small $\xi > 0$. By Cauchy--Schwarz and $\tau^h \le d_{2^h}$, shifted divisor moments satisfy
+\begin{equation}\label{eq:shifted_div}
+\sum_{n \asymp X} \tau(n)^j \tau(|n-2|)^k \ll X L^{O_{j,k}(1)},
+\end{equation}
+while coprime means add at most $L^{O_J(1)}$ under $\tau(d)^J/\varphi(d)$.
+
+For pieces with support $D_0 \le X^{1/2-\epsilon_0}$, separate the smooth weight in logarithmic coordinates and apply the multiplicative large sieve: writing $d = gh$ with primitive conductor $g > 1$ and retaining $(n,h)=1$ on both prime factors, Cauchy--Schwarz bounds the $G < g \le 2G$ contribution with weight $1/\varphi(g)$ by $L^{O(1)}(X/G + \sqrt{X}(\sqrt{R}+\sqrt{U}) + G\sqrt{X})$. Summing $G > L^B$ over $h \le D_0/g$ via $1/\varphi(gh) \le 1/(\varphi(g)\varphi(h))$ and $\sum_h 1/(h\varphi(h)) < \infty$, and handling $g \le L^B$ by prime Siegel--Walfisz (removing $\ell \mid h$ at cost $O(\omega(h)L^{O(1)})$), gives $O_A(XL^{-A})$.
+
+For the high-support pieces, fix a common roughness cutoff $z_* = (C X_0)^{1/(\log\log(C X_0))^3}$ across all subcharts of each original dyadic chart of scale $X_0$; for large $X_0$ this exceeds $X^{1/(\log\log X)^3}$. Replace each prime indicator by $\Lambda(m)/\log m$ with $P^-(m) > z_*$ (proper prime powers $\gg x^{a_*}$ cost $O(x^{-a_*/2+o(1)})$). At each original scale $R_i$, put $Z_i = (2R_i)^{1/3}$ and $m_i = \mu\ind_{[1,Z_i]}$; expanding $(\delta - 1*m_i)^{*3}*\Lambda = 0$ below $2R_i$ yields the order-three Heath--Brown identity
+\begin{equation}\label{eq:hb3}
+\Lambda = \sum_{j=1}^3 (-1)^{j-1}\binom{3}{j} m_i^{*j} * 1^{*(j-1)} * \log \qquad (n \le 2R_i).
+\end{equation}
+Factor roughness over the at most six variables per prime, dyadically subdivide each slot, and separate the smooth profile and $\log$ weights by Fourier inversion in logarithmic coordinates with two integrations by parts per variable (arbitrarily many to truncate frequencies at $L^B$, controlling tails via~\eqref{eq:shifted_div}).
+
+\smallskip
+\noindent\emph{Case 1: A medium slot exists.} Suppose some dyadic slot has length $U \in [X^{2\zeta}, X^{1/3+\zeta/2}]$. Take it for Pascadi's short sequence $\alpha_n$ (a bounded rough $1$ or rough $\mu$ times a logarithmic twist on an interval). To verify Siegel--Walfisz~\cite[Definition~4.3]{Pascadi2025}:
+\begin{itemize}
+\item For rough $1$, use the even and odd Brun polynomials $U_z, L_z$ below, expanding $d \le y_* = X^{o(1)}$ and counting multiples in each class modulo polylogarithmic $q$; the two bounds match up to $O_A(U L^{-A}) + O(y_* L^{O(1)})$.
+\item For rough $\mu$, expand $\mu(n)\ind_{P^-(n)>z_*} = \sum_{d \mid n,\, P^+(d)\le z_*} \mu(n/d)$. Terms with $d > U^{1/2}$ contribute at most $U \exp(-\log U/(2\log z_*))\prod_{\ell \le z_*}(1-\ell^{-1+1/\log z_*})^{-1} \ll_A U L^{-A}$ by Rankin's trick and Mertens; terms with $d \le U^{1/2}$ satisfy Möbius Siegel--Walfisz at length $U/d \ge U^{1/2}$.
+\end{itemize}
+Auxiliary coprimality $(n,h)=1$ deletes at most $O((U/z_*+1)\omega(h))$ integers by roughness; $q > L^B$ is trivial by $1$-boundedness. Truncating the complementary divisor-bounded sequence at $L^B$ via~\eqref{eq:shifted_div} and applying Lemma~\ref{lem:packing}, Pascadi~\cite[Proposition~4.4]{Pascadi2025} (after dyadically subdividing the three modulus groups, since all powers in~\eqref{eq:pascadi_cond} are positive) yields~\eqref{eq:distrib}.
+
+\smallskip
+\noindent\emph{Case 2: No medium slot exists.} With $\zeta \ll a_*$, each of the two original primes contains a long slot of length $> X^{1/3+\zeta/2}$ (since six short slots have product $O(X^{12\zeta})$). There are exactly two long slots (three would exceed $X$), neither can be truncated M\"obius, and the short complementary product has scale $M \le X^{24\zeta+o(1)}$ and $L^1$-norm $O(ML^C)$. We prove an absolute modulus average.
+
+For fixed short product $m$ with $(m,d)=1$, set $b_0 \equiv 2\bar m \pmod d$. For smooth compact long profiles $f_0,g_0$ at scales $U,V$, double Poisson summation gives the unrestricted discrepancy
+\begin{equation}\label{eq:poisson2}
+\frac{UV}{d^2}\sum_{j,k\in\mathbb{Z}}\widehat f_0(jU/d)\widehat g_0(kV/d)
+\left(S(b_0 j, k; d) - \frac{c_d(j)c_d(k)}{\varphi(d)}\right).
+\end{equation}
+Both axes $j=0$ and $k=0$ vanish because $(b_0,d)=1$. Using $|\widehat f_0(t)| \ll (\|f_0\|_1 + \|f_0''\|_1)(1+|t|)^{-2}$, the Weil bound $|S(b_0 j, k; d)| \le \tau(d)\sqrt{d}\,(j,k,d)^{1/2}$, and $\sum_{j \ne 0,\, h\mid j}(1+|j|/H)^{-2} \le 2H/h$, summing over $d \le D_0$ yields $O(M D_0^{3/2} L^{O(1)})$ (and $O(\tau(d)^2/\varphi(d))$ from Ramanujan sums), which has a fixed power saving since $24\zeta + \tfrac{3}{2}(5/8+\xi) < 1$.
+
+To restore roughness without multiplying negative lower-sieve polynomials, set $h_0$ to the even integer $2\lfloor(\log\log X)^2\rfloor$ and put $y_* = z_*^{h_0+1} = X^{o(1)}$. Let $r_z := \ind_{P^-(n)>z_*}$ denote the rough indicator. Form Brun polynomials $L_z$ and $U_z$ satisfying $L_z \le r_z \le U_z$, truncated at $h_0+1$ and $h_0$ prime factors, with $G_z = U_z - L_z \ge 0$ and coefficients bounded by $1$. Their coprime densities satisfy $a_d \ll 1$ and $0 \le g_d \le (\sum_{\ell \le z_*} 1/\ell)^{h_0+1}/(h_0+1)! \ll_A L^{-A}$. Using
+\begin{equation}\label{eq:brun_diff}
+0 \le U_1 U_2 - r_1 r_2 = (U_1 - r_1)U_2 + r_1(U_2 - r_2) \le G_1 U_2 + U_1 G_2,
+\end{equation}
+expanding Brun divisors shifts $(U,V,m)$ to $(U/e, V/e', mee')$ with at most a $y_*^2$ loss in~\eqref{eq:poisson2}, while the coprime means from
+\[
+\sum_{(n,d)=1} f_0(n/U) U_z(n) = U\frac{\varphi(d)}{d}a_d\int f_0 + O\bigl(y_*\tau(d)(\|f_0\|_1 + \|f_0'\|_1)\bigr)
+\]
+and its $G_z$ analogue give total mean error $L^{O(1)}(MUV\varepsilon_X + M(U+V)y_* + My_*^2) \ll_A XL^{-A}$. Sharp interval indicators are retained via smooth error strips of relative width $L^{-B}$. This completes the proof of~\eqref{eq:distrib}.
+\end{proof}
+
+\section{Limiting density and small-prime tail}\label{sec:density}
+
+Let $\normF(s) := F(s)/(2e^\gamma)$ and $\normf(s) := f(s)/(2e^\gamma)$ be the normalized linear-sieve functions, extended by $\normf(s) = 0$ for $s \le 2$. They satisfy
+\begin{equation}\label{eq:delay}
+\begin{gathered}
+\normF(s) = \frac{1}{s}\ (1\le s\le 3),\qquad \normf(s)=0\ (s\le 2),\\
+(s\normF(s))' = \normf(s-1)\ (s\ge 3),\qquad (s\normf(s))' = \normF(s-1)\ (s\ge 2).
+\end{gathered}
+\end{equation}
+Here $\normF$ decreases and $\normf$ increases to the same limit, $\normF$ is convex on $s \ge 1$ (as $-\normF' = (\normF - \normf(s-1))/s$ decreases), and $\normf$ is concave on $s \ge 2$ (as $\normf' = (\normF(s-1) - \normf)/s$ decreases), with an upward derivative jump of $1/2$ at $s=2$.
+
+In units of $C_2/L$, the ordinary reference cubic Rosser tree of cap $T = 5/8$ and root $\rho = 1/5$ has density $2\normF(T/\rho)/\rho = 2/T + I_1$, where with $h = T/\rho - 3 = 1/8$,
+\begin{equation}\label{eq:I1}
+I_1 = \frac{2}{T}\int_0^h \frac{\log(1+t)}{2+t}\,dt \le \frac{h^2}{2T}.
+\end{equation}
+By the exit-series form of the linear sieve (with uniform prime-harmonic convergence on compact positive parameter ranges, noting that at any fixed exit rank the last exponent is bounded below by a positive multiple of $\rho$~\cite{Iwaniec1980,FriedlanderIwaniec2010}), every third-rank subtree is a negative copy of an ordinary lower cubic sieve of remaining level $J - S_3$ and threshold $t_3$. Hence the rank-three replacement adds
+\begin{equation}\label{eq:I3}
+I_3 = 2\int_{0 < z < y < u < \rho}
+\frac{\normf((T-u-y-z)/z) - \normf((J-u-y-z)/z)}{uy z^2}\,du\,dy\,dz.
+\end{equation}
+On $z < \delta'$, all finite approximations keep $J - u - y \ge c > 0$, so by the fundamental lemma the residual density difference is $O(V(x^z)e^{-c'/z}) = O(C_2 z/L)$; integrating against the first two harmonic measures $\ll (1 + \log(\rho/z))^2$ and dyadic $z$ gives $O(\delta'(1 + \log^2(\rho/\delta'))C_2/L)$. Thus the compact limit at $z \ge \delta'$ and dominated convergence yield~\eqref{eq:I3} and show that the finite construction and attachment errors in Section~\ref{sec:packing} can be kept at most $2u_0 C_2/L$ for any chosen $u_0 > 0$. There is no separate single-prime top interval above $\mu_0$ because $\rho = 1/5 < 1/4$.
+
+To bound the small-$z$ tail of~\eqref{eq:I3} explicitly, let $\normD := \normF - \normf \ge 0$ and $\delta = 19/1000$. By~\eqref{eq:delay},
+\begin{equation}\label{eq:delay_D}
+\normD'(s) = \frac{-\normD(s) - \normD(s-1)}{s} \le -\frac{2\normD(s)}{s} \qquad (s \ge 3),
+\end{equation}
+so $\normD(s) \le \normD(9)(9/s)^2$ for $s \ge 9$. Since $J - u - y \ge (1 - 3\rho)/2 = \rho$, the lower argument in~\eqref{eq:I3} exceeds $(\rho - \delta)/z > 9$ for $z < \delta$. Bounding the numerator by $\normD((J-u-y-z)/z)$ and integrating $z < y < u < \rho$ gives
+\begin{equation}\label{eq:I3t}
+I_{3,t} \le \frac{81\normD(9)\delta}{(\rho-\delta)^2}\left(\log^2(\rho/\delta) + 2\log(\rho/\delta) + 2\right).
+\end{equation}
+Letting $I_{3,c}$ be~\eqref{eq:I3} restricted to $z \ge \delta$, the rank-three baseline is $U_0 = 2/T + I_1 + I_{3,c} + I_{3,t}$.
+
+At rank four ($t_4 \ge 3/100$, already compact), the residual subtree is a positive upper sieve, so increasing the cap from $J$ to $M$ subtracts the nonnegative gain
+\begin{equation}\label{eq:G1}
+G_1 = 2\int_{\mathcal{A}}
+\frac{\normF((J - S_4)/t_4) - \normF((M - S_4)/t_4)}{t_1 t_2 t_3 t_4^2}\,dt_1\,dt_2\,dt_3\,dt_4,
+\end{equation}
+where $\mathcal{A}$ consists of ordered rank-four prefixes passing the third cube and admitting a strict improvement~\eqref{eq:rank4_guard}. Note $(J-S_4)/t_4 > 1$ because $J > S_2 + 3t_3$ implies $J - S_4 > 2t_3 - t_4 \ge t_4$.
+
+\section{Application to $B_b(x)$ and proof of Theorem~\ref{thm:main}}\label{sec:bad_pairs}
+
+Let $K$ be any upper bound for $U_0 + 2u_0$ (rank three) or $U_0 + 2u_0 - G_1$ (ranks three and four). Discard $p < x/L^B$ ($B > 4$) from $B_b(x)$ at cost $O(x/L^B)$; for the remaining pairs $p = rq - 2$, both primes satisfy $r,q \gg x^{a_*}$ for any fixed $a_* < b/(1+b)$, and $p > x^{\rho'}$. Applying Lemma~\ref{lem:first_exit} pointwise to $rq - 2$ and majorizing the pair region by smooth outer weights of polylogarithmic Euler norms, Proposition~\ref{prop:distribution} yields an upper bound controlled by the unrestricted pair mass times $\sum_d \rho_x(d)/\varphi(d)$: replacing $\ind_{(rq,d)=1}$ by $1$ costs $O(L x^{-a_*})$ relative to the pair mass, because $\sum_{d \le 2x,\, \ell \mid d} 1/\varphi(d) \ll L/\ell$ for each $\ell \in \{r,q\}$.
+
+In coordinates $t = \log r/L$ and $y = rq/x$, on $y \ge \sigma > 0$ the inequalities $q^b < r \le q$ and $rq \le x+2$ match $\beta_b := b/(1+b) < t \le 1/2$ up to $O_\sigma(1/L)$, while $y \le \sigma$ is covered by a smooth majorant on $y < 2\sigma$, $t \ge \beta_b - o(1)$, $r \le 2\sqrt{x}$ of mass $O(\sigma x/L)$ via the prime number theorem. Sending the smoothing width and then $\sigma$ to zero gives limiting pair mass $\int_{\beta_b}^{1/2} dt/(t(1-t)) = \log(1/b)$ in units of $x/L$. Combining with~\eqref{eq:sub} gives
+\begin{equation}\label{eq:final_sub}
+\liminf_{x\to\infty}\frac{A_b(x)}{H(x)}
+\ \ge\ \frac{12759}{10000} - K\log(1/b).
+\end{equation}
+
+\section{Directed integer certificate}\label{sec:certificate}
+
+The companion script \texttt{verify\_twin\_upper\_sieve\_cert.py} certifies all numerical inequalities in pure integer arithmetic at denominator $Q = 2^{80} = 1208925819614629174706176$ (using \texttt{Fraction}, integer \texttt{isqrt} rounded upward, and floor/ceiling integer divisions, with zero floating-point operations in any bound).
+
+\begin{enumerate}
+\item \emph{Logarithms and delay tables.} For $1 \le z \le 2$, $\log z = 2\sum_{j=0}^{47} v^{2j+1}/(2j+1) + R_{48}$ ($v=(z-1)/(z+1)$) with $0 \le R_{48} \le 2v^{97}/(97(1-v^2))$; larger arguments reduce by powers of $2$. The tables for $s\normF$ and $s\normf$ on a $1/4096$ mesh integrate the preceding numerator chord against $ds/s$ using alternating fourth/fifth partial sums of the weights $(j+1)\log(1+1/j)-1$ and $1-j\log(1+1/j)$. Since $s\normF$ is convex and $s\normf$ is concave (each with curvature bounded by $1$ on its nonconstant cells), the chord error $\le 1/(12n^2 j)$ is subtracted in the lower bound for $s\normf$ (for $j \ge 3n$) and added in the upper bound for $s\normF$. Beyond $s = 12$, both functions lie in $[\normf(12), \normF(12)]$. An independent $44$-term quarter-interval Taylor solver (\texttt{reference\_check}) verifies containment of both branches at $s = 4, \dots, 12$ within $10^{-12}$.
+
+\item \emph{Ordered simplex geometry and kinks.} On any grid box intersected with $t_1 \ge t_2 \ge \dots \ge t_d$, each run of $m$ coincident grid intervals forms an ordered simplex of volume fraction $1/m!$, order-statistic centroid $l + j(h-l)/(m+1)$, and coordinate variance $\le (h-l)^2/12$. For an affine form $Y$, $\mathbb{E}Y_+ \le (\sqrt{\operatorname{Var}(Y) + (\mathbb{E}Y)^2} + \mathbb{E}Y)/2$, using Cauchy--Schwarz within each run, independence across runs, and $\sqrt{12} > 17/5$. At rank three, only branches whose strict guards hold throughout the cell enter the lower minorant of $J$; at rank four, any unrefuted parent branch enters the upper majorant of $J$, while a candidate branch~\eqref{eq:rank4_guard} enters the lower gain only when both planes satisfy all guards throughout the cell (using the single highest certified gain per cell, with $\normF(s) = 1/s$ extended to $0 < s \le 1$).
+
+\item \emph{Cell Taylor bounds.} For a proxy affine cap $P$ with residual ratio $s = (P-S_d)/t_d$ and centered deviation $g = P - S_d - s(\mathbf{c})t_d$, the weighted linear Taylor error on $\phi \in \{\normF, \normf\}$ is bounded by
+\[
+B(\mathbf{l})\frac{|\phi'(s(\mathbf{c}))|\,\sigma_g}{l_d}\sum_i (a_i + \ind_{i=d})\frac{\sigma_i}{l_i},
+\]
+where $B(\mathbf{t}) = 2\prod_i t_i^{-a_i}$ ($a_i = 1 + \ind_{i=d}$), tightened on differences of same-sign slopes via $d_1\sigma_{g_1-g_2} + |d_1-d_2|\sigma_{g_2}$ and its symmetric counterpart. Quadratic curvature corrections $\le B(\mathbf{l})\sup|\phi''|\,\sigma_g^2/(2l_d^2)$ are charged in the non-convex/non-concave direction, with an extra $B(\mathbf{l})\sigma_g/(4l_d)$ whenever the upper estimate for $\normf$ straddles the $s=2$ kink. The common weight $B$ satisfies $B(\mathbf{c}) \le \mathbb{E}B \le B(\mathbf{c}) + \frac{1}{2}B(\mathbf{l})[(\sum_i a_i\sigma_i/l_i)^2 + \sum_i a_i(\sigma_i/l_i)^2]$.
+\end{enumerate}
+
+\subsection{Certified rational bounds}
+Taking $u_0 = 1/10^6$, running the verifier evaluates $435001$ third-rank and $700001$ fourth-rank cells, exits with code~$0$, and certifies the following exact numerators at $Q = 2^{80}$:
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}lcr@{}}
+\toprule
+Quantity & Direction & Exact numerator at $Q=2^{80}$ \\
+\midrule
+$I_1$ & $\le$ & \texttt{13943390692550619486377} \\
+$I_{3,c}$ & $\le$ & \texttt{66925635371004488689726} \\
+$I_{3,t}$ & $\le$ & \texttt{3409294078124169319} \\
+$G_1$ & $\ge$ & \texttt{19374509949983140898664} \\
+$K_3$ (for $U_0+2u_0$) & $\le$ & \texttt{3949437475976085820663535} \\
+$K_4$ (for $U_0+2u_0-G_1$) & $\le$ & \texttt{3930062966026102679764871} \\
+\bottomrule
+\end{tabular}
+\caption{Certified rational density components ($K_4 \approx 3.2508717$).}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}llr@{}}
+\toprule
+$b = a - 1$ & Construction & Lower bound numerator on margin at $Q=2^{80}$ \\
+\midrule
+$3539/5000$ ($1-1.7078$) & Two-factor shortcut & \texttt{377883443722357593132} \\
+$6767/10000$ ($1-1.6767$) & Rank three ($K_3$) & \texttt{105553009773095358394} \\
+$17/25$ ($1-1.68$) & Ranks three and four ($K_4$) & \texttt{26790620021371983365686} \\
+$169/250$ ($1-1.676$) & Ranks three and four ($K_4$) & \texttt{3604340579464536079328} \\
+$3377/5000$ ($1-1.6754$) & Ranks three and four ($K_4$) & \texttt{114570068060210771664} \\
+$67539/100000$ ($1-1.67539$) & Ranks three and four ($K_4$) & \texttt{56380964408304863785} \\
+\bottomrule
+\end{tabular}
+\caption{Certified positive lower margins for $\frac{12759}{10000} - K\log(1/b)$ in~\eqref{eq:final_sub}.}
+\end{table}
+
+All six margins are strictly positive; in particular, the final row gives~\eqref{eq:main_margin} and completes the proof of Theorem~\ref{thm:main}.
+
+\section*{Reproducibility and Acknowledgments}
+The standalone Python verifier \texttt{verify\_twin\_upper\_sieve\_cert.py} runs with the Python standard library alone (no external packages required) and verifies every bound in Tables~1 and~2 in approximately three minutes. The analytic derivations and certificate implementation were developed in an AI-assisted human-in-the-loop research workflow, with independent line-by-line mathematical auditing and full re-execution of the integer verifier.
+
+\begin{thebibliography}{99}
+
+\bibitem{BakerHarman1996}
+R.~C.~Baker and G.~Harman,
+\emph{The Brun--Titchmarsh theorem on average},
+in \emph{Analytic Number Theory, Vol.~1 (Allerton Park, IL, 1995)},
+Progr. Math.~\textbf{138}, Birkh\"auser, Boston, 1996, pp.~39--103.
+
+\bibitem{Chen1973}
+J.~R.~Chen,
+\emph{On the representation of a larger even integer as the sum of a prime and the product of at most two primes},
+Sci. Sinica~\textbf{16} (1973), 157--176.
+
+\bibitem{DeshouillersIwaniec1982}
+J.-M.~Deshouillers and H.~Iwaniec,
+\emph{Kloosterman sums and Fourier coefficients of cusp forms},
+Invent. Math.~\textbf{70} (1982), no.~2, 219--288.
+
+\bibitem{FriedlanderIwaniec2010}
+J.~Friedlander and H.~Iwaniec,
+\emph{Opera de Cribro},
+Amer. Math. Soc. Colloq. Publ.~\textbf{57}, Amer. Math. Soc., Providence, RI, 2010.
+
+\bibitem{Iwaniec1980}
+H.~Iwaniec,
+\emph{Rosser's sieve},
+Acta Arith.~\textbf{36} (1980), 171--202.
+
+\bibitem{Iwaniec1980b}
+H.~Iwaniec,
+\emph{A new form of the error term in the linear sieve},
+Acta Arith.~\textbf{37} (1980), 307--320.
+
+\bibitem{RunboLi2026}
+R.~Li,
+\emph{On Chen's theorem, Goldbach's conjecture and almost prime twins~II},
+Math. Reports~\textbf{28} (2026), no.~1--2, 39--61; arXiv:2405.05727v4.
+
+\bibitem{LiLiu2026}
+J.~Li and J.~Liu,
+\emph{Theorem $(1+1.9)$ on the Goldbach conjecture},
+preprint, arXiv:2606.05224v2 (2026).
+
+\bibitem{Lichtman2023}
+J.~D.~Lichtman,
+\emph{Primes in arithmetic progressions to large moduli, and Goldbach beyond the square-root barrier},
+preprint, arXiv:2309.08522v1 (2023).
+
+\bibitem{Pascadi2025}
+A.~Pascadi,
+\emph{On the exponents of distribution of primes and smooth numbers},
+preprint, arXiv:2505.00653v1 (2025).
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this manuscript or certificate verifier, please cite it as below."
+title: "A Self-Contained Proof of Proposition (1 - 1.67539) for the Twin Prime Problem"
+type: software
+authors:
+  - family-names: "[Family Name]"
+    given-names: "[Given Name]"
+date-released: 2026-11-26
+version: "1.0.0"
+license: MIT
+keywords:
+  - twin prime conjecture
+  - Chen's theorem
+  - sieve methods
+  - level of distribution
+  - directed integer certificate
+abstract: >-
+  Unconditional proof of Proposition (1 - 1.67539) for the twin prime problem,
+  combining Runbo Li's 1.2759 Chen lower bound with a self-contained positive
+  upper-sieve majorant at distribution level 5/8 and a pure-integer directed
+  certificate at denominator 2^80.

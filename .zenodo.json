@@ -1,0 +1,22 @@
+{
+  "title": "A Self-Contained Proof of Proposition (1 - 1.67539) for the Twin Prime Problem",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "Self-contained proof of Proposition (1 - 1.67539) on twin primes (p + 2 = rq, r = 1 or prime, r <= q^{0.67539}) with a standalone pure-integer verifier at denominator 2^80, improving Li and Liu's (1 - 1.75).",
+  "creators": [
+    {
+      "name": "[Family Name, Given Name]",
+      "affiliation": "[Institution / Independent Researcher]"
+    }
+  ],
+  "keywords": [
+    "twin prime problem",
+    "Chen's theorem",
+    "weighted sieve",
+    "level of distribution",
+    "integer certificate"
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "notes": "Standalone verifier: python verify_twin_upper_sieve_cert.py (Python 3.10+, standard library only)."
+}
