@@ -27,11 +27,15 @@ This improves Li and Liu's unconditional Proposition $(1 - 1.75)$ ([arXiv:2606.0
 
 ## Repository Contents
 
-- `paper.tex` — Publication-ready AMS-LaTeX manuscript (`amsart`). Fill in author/affiliation fields before arXiv or journal submission.
-- `verify_twin_upper_sieve_cert.py` — Standalone pure-Python verifier using exact integer arithmetic at denominator $Q = 2^{80}$ (no floating-point operations in any certified bound, with an internal $44$-term Taylor cross-check at $s=4,\dots,12$).
+- `paper.tex` — AMS-LaTeX (`amsart`) manuscript, author fields already filled; rebuild with `build.ps1`.
+- `paper.pdf` — prebuilt 11-page PDF (Latin Modern Type 1 throughout, no bitmap fonts).
+- `arxiv-src.zip` — arXiv source bundle (contains only `paper.tex`; compiles standalone to the same 11 pages).
 - `TwinPrime-1-minus-a-SelfContained.md` — Markdown source of the complete mathematical argument.
-- `知乎文章草稿.md` — Chinese exposition and video-script draft summarizing the background, proof mechanism, and verification workflow.
-- `CITATION.cff`, `.zenodo.json`, `LICENSE` — Citation and release metadata for GitHub + Zenodo DOI minting.
+- `verify_twin_upper_sieve_cert.py` — Standalone pure-Python verifier using exact integer arithmetic at denominator $Q = 2^{80}$ (no floating-point operations in any certified bound, with an internal $44$-term Taylor cross-check at $s=4,\dots,12$).
+- `verify_output.txt` — Recorded run of the verifier (exit code 0, 173.250 s, script and PDF md5 pinned).
+- `build.ps1` — Rebuilds `paper.pdf` with `pdflatex` (falls back to the local TinyTeX installation when `pdflatex` is not on `PATH`).
+- `submission-metadata.md` — Copy-paste fields for arXiv/aiXiv/journal forms, including the declarations and the AI-assistance statement.
+- `CITATION.cff`, `.zenodo.json`, `LICENSE` — Citation and release metadata (code MIT, manuscript CC BY 4.0).
 
 ## Reproducibility
 
