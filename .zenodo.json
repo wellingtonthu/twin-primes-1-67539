@@ -5,8 +5,9 @@
   "description": "Self-contained proof of Proposition (1 - 1.67539) on twin primes (p + 2 = rq, r = 1 or prime, r <= q^{0.67539}) with a standalone pure-integer verifier at denominator 2^80, improving Li and Liu's (1 - 1.75).",
   "creators": [
     {
-      "name": "[Family Name, Given Name]",
-      "affiliation": "[Institution / Independent Researcher]"
+      "name": "Wei, Lindong",
+      "affiliation": "Independent Researcher",
+      "orcid": ""
     }
   ],
   "keywords": [
@@ -16,7 +17,7 @@
     "level of distribution",
     "integer certificate"
   ],
-  "license": "MIT",
+  "license": "cc-by-4.0",
   "access_right": "open",
-  "notes": "Standalone verifier: python verify_twin_upper_sieve_cert.py (Python 3.10+, standard library only)."
+  "notes": "Code (verify_twin_upper_sieve_cert.py) is MIT-licensed; the manuscript and PDF are CC BY 4.0. Standalone verifier: python verify_twin_upper_sieve_cert.py (Python 3.10+, standard library only)."
 }

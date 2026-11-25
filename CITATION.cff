@@ -3,11 +3,15 @@ message: "If you use this manuscript or certificate verifier, please cite it as 
 title: "A Self-Contained Proof of Proposition (1 - 1.67539) for the Twin Prime Problem"
 type: software
 authors:
-  - family-names: "[Family Name]"
-    given-names: "[Given Name]"
+  - family-names: "Wei"
+    given-names: "Lindong"
+    affiliation: "Independent Researcher"
+    email: "744140495@qq.com"
 date-released: 2026-11-26
 version: "1.0.0"
-license: MIT
+license:
+  - MIT
+  - CC-BY-4.0
 keywords:
   - twin prime conjecture
   - Chen's theorem
