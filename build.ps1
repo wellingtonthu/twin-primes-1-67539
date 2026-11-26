@@ -21,10 +21,12 @@ Copy-Item (Join-Path $src 'paper.tex') (Join-Path $build 'paper.tex') -Force
 
 Push-Location $build
 try {
-    pdflatex -interaction=nonstopmode -halt-on-error paper.tex | Out-Null
-    if ($LASTEXITCODE -ne 0) { throw 'first pdflatex pass failed; inspect paper.log in the temp build dir' }
-    pdflatex -interaction=nonstopmode -halt-on-error paper.tex | Out-Null
-    if ($LASTEXITCODE -ne 0) { throw 'second pdflatex pass failed; inspect paper.log in the temp build dir' }
+    foreach ($texPass in 1..3) {
+        pdflatex -interaction=nonstopmode -halt-on-error paper.tex | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            throw "pdflatex pass $texPass failed. Inspect paper.log in the temp build dir."
+        }
+    }
     Select-String -Path 'paper.log' -Pattern 'Output written on' | ForEach-Object { $_.Line }
     Copy-Item 'paper.pdf' (Join-Path $src 'paper.pdf') -Force
     Write-Output 'paper.pdf rebuilt and copied back.'

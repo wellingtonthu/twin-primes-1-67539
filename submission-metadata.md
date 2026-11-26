@@ -37,9 +37,13 @@ For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely man
 
 ## Published versions
 
-- aiXiv: `aixiv.261125.000002` — <https://aixiv.science/abs/aixiv.261125.000002> (v1.0 lists the LaTeX source by mistake; v1.1 under review carries the correct 11-page PDF: <https://aixiv.science/pdf/aixiv.261125.000002v1.1.pdf>, CC-BY-4.0)
+- aiXiv: `aixiv.261125.000002` — <https://aixiv.science/abs/aixiv.261125.000002> (v1.1 is live with official review completed and serves the 11-page PDF: <https://aixiv.science/pdf/aixiv.261125.000002v1.1.pdf>, CC-BY-4.0; local post-v1.1 analytical refinements below are ready for an optional v1.2 upload)
 - Zenodo: `10.5281/zenodo.24539533` (v1.0.0; concept DOI `10.5281/zenodo.24539532`)
 - arXiv: pending
+
+## Local manuscript revision (2026-11-26)
+
+The files below include the corrected two-group packing bound, explicit uniform square-reserve bounds in Lemma 3.1 and Section 3.1, fixed parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$), the $q>U^2$ Siegel--Walfisz check, and a reference to Chan's prefix sieve and semiprime subtraction. The theorem and numerical bounds are unchanged. The version identifiers above refer to the earlier submission and deposit records.
 
 ## Files to upload
 

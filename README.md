@@ -16,6 +16,8 @@ where $C_2 = 2\prod_{\ell > 2}\bigl(1 - (\ell - 1)^{-2}\bigr)$.
 
 This improves Li and Liu's unconditional Proposition $(1 - 1.75)$ ([arXiv:2606.05224v2](https://arxiv.org/abs/2606.05224v2), Theorem 1.2) by `0.07461`.
 
+**Revision (2026-11-26).** Added explicit uniform square-reserve proofs in Lemma 3.1 and §3.1, fixed the parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$) and $q>U^2$ Siegel--Walfisz tail in Proposition 4.1, corrected the two-group packing exponents, and added the citation to Chan. The theorem and numerical bounds are unchanged; the v1.0.0 Zenodo deposit and v1.1 aiXiv record predate these analytic polish edits.
+
 ## Summary of Results
 
 | Method | Exponent $a$ | Bound on $r$ | Density / Status |
@@ -34,7 +36,7 @@ This improves Li and Liu's unconditional Proposition $(1 - 1.75)$ ([arXiv:2606.0
 - `arxiv-src.zip` — arXiv source bundle (contains only `paper.tex`; compiles standalone to the same 11 pages).
 - `TwinPrime-1-minus-a-SelfContained.md` — Markdown source of the complete mathematical argument.
 - `verify_twin_upper_sieve_cert.py` — Standalone pure-Python verifier using exact integer arithmetic at denominator $Q = 2^{80}$ (no floating-point operations in any certified bound, with an internal $44$-term Taylor cross-check at $s=4,\dots,12$).
-- `verify_output.txt` — Recorded run of the verifier (exit code 0, 173.250 s, script and PDF md5 pinned).
+- `verify_output.txt` — Recorded run of the verifier (exit code 0, with script and PDF checksums).
 - `build.ps1` — Rebuilds `paper.pdf` with `pdflatex` (falls back to the local TinyTeX installation when `pdflatex` is not on `PATH`).
 - `submission-metadata.md` — Copy-paste fields for arXiv/aiXiv/journal forms, including the declarations and the AI-assistance statement.
 - `CITATION.cff`, `.zenodo.json`, `LICENSE` — Citation and release metadata (code MIT, manuscript CC BY 4.0).
@@ -54,11 +56,12 @@ Expected runtime is ~3 minutes, ending with exit code `0` and printing exact num
 - `K <= 3930062966026102679764871/Q` ($\approx 3.2508717$)
 - `c=12759/10000; b=67539/100000; ... margin >= 56380964408304863785/Q` ($> 0.0000466$)
 
-A prebuilt `paper.pdf` (11 pages) is included. It was compiled locally with TinyTeX (TeX Live 2026) using `pdflatex` twice; the log has zero errors, zero overfull boxes, zero undefined references, and **no bitmap (Type 3) fonts** (Latin Modern Type 1 throughout), so the file is arXiv-ready.
+A prebuilt `paper.pdf` (11 pages) is included. It was compiled locally with TinyTeX (TeX Live 2026) using three `pdflatex` passes to settle references and PDF outlines; the log has zero errors, zero overfull boxes, zero undefined references, and **no bitmap (Type 3) fonts** (Latin Modern Type 1 throughout), so the file is arXiv-ready.
 
 To rebuild it on any standard TeX Live / Overleaf / arXiv environment:
 
 ```bash
+pdflatex paper.tex
 pdflatex paper.tex
 pdflatex paper.tex
 ```
@@ -77,7 +80,8 @@ pdflatex paper.tex
 
 1. **Published Chen lower bound:** Runbo Li, *Mathematical Reports* **28** (2026), no. 1--2, 39--61 ([arXiv:2405.05727v4](https://arxiv.org/abs/2405.05727v4), Theorem 1.3): $\pi_{1,2}(x) \ge 1.2759\,C_2 x / (\log x)^2$.
 2. **Distribution level $5/8$:** Alexandru Pascadi, *On the exponents of distribution of primes and smooth numbers* ([arXiv:2505.00653v1](https://arxiv.org/abs/2505.00653v1), Proposition 4.4 / eq. (4.15)).
-3. **AI-assisted workflow note:** The mathematical derivation, integer certificate implementation, and multi-pass adversarial auditing were carried out in an AI-assisted human-directed workflow; all numerical bounds are independently verified by `verify_twin_upper_sieve_cert.py`.
+3. **Methodological precedent:** [Chan's Goldbach preprint](https://aixiv.science/pdf/aixiv.261111.000001v1.0.pdf), Appendix F and §8, supplies the positive prefix-sieve framework and the subtraction of excluded semiprimes. This manuscript verifies the cap changes and the progression estimate at fixed residue 2 using Pascadi's input.
+4. **AI-assisted workflow note:** The mathematical derivation, integer certificate implementation, and multi-pass adversarial auditing were carried out in an AI-assisted human-directed workflow; all numerical bounds are independently verified by `verify_twin_upper_sieve_cert.py`.
 
 ## How to cite
 
