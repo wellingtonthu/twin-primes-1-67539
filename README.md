@@ -16,7 +16,7 @@ where $C_2 = 2\prod_{\ell > 2}\bigl(1 - (\ell - 1)^{-2}\bigr)$.
 
 This improves Li and Liu's unconditional Proposition $(1 - 1.75)$ ([arXiv:2606.05224v2](https://arxiv.org/abs/2606.05224v2), Theorem 1.2) by `0.07461`.
 
-**Revision note (`v1.0.1`, 2026-11-26).** Added explicit uniform square-reserve proofs in Lemma 3.1 and §3.1, fixed the parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$) and $q>U^2$ Siegel--Walfisz tail in Proposition 4.1, corrected the two-group packing exponents, and added the citation to Chan. The theorem and numerical bounds are unchanged. Both Zenodo `v1.0.1` and aiXiv `v1.2` match this full revision.
+**Revision note (`v1.0.1` + arXiv polish, 2026-11-26).** Added explicit uniform square-reserve proofs in Lemma 3.1 and §3.1, fixed the parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$) and $q>U^2$ Siegel--Walfisz tail in Proposition 4.1, corrected the two-group packing exponents, and added the citation to Chan. Subsequent pre-arXiv polish simplified Proposition 1.2 to cite Li--Liu Lemma 2.5 directly and expanded the complementary-truncation and Brun nonnegative-majorant details in Proposition 4.1. The theorem and numerical bounds are unchanged.
 
 ## Summary of Results
 

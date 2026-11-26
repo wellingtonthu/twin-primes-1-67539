@@ -41,9 +41,9 @@ For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely man
 - Zenodo: `10.5281/zenodo.24547437` (v1.0.1, archiving the full analytic revision + ORCID; supersedes `10.5281/zenodo.24539533` v1.0.0; concept DOI `10.5281/zenodo.24539532`)
 - arXiv: pending
 
-## Manuscript revision (`v1.0.1`, 2026-11-26)
+## Manuscript revision (`v1.0.1` + pre-arXiv polish, 2026-11-26)
 
-`v1.0.1` includes the corrected two-group packing bound, explicit uniform square-reserve bounds in Lemma 3.1 and Section 3.1, fixed parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$), the $q>U^2$ Siegel--Walfisz check, and a reference to Chan's prefix sieve and semiprime subtraction. The theorem and numerical bounds are unchanged and are archived in Zenodo `10.5281/zenodo.24547437`.
+`v1.0.1` (archived in Zenodo `10.5281/zenodo.24547437` and aiXiv `v1.2`) includes the corrected two-group packing bound, explicit uniform square-reserve bounds in Lemma 3.1 and Section 3.1, fixed parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$), the $q>U^2$ Siegel--Walfisz check, and a reference to Chan's prefix sieve and semiprime subtraction. Subsequent pre-arXiv text polish simplified Proposition 1.2 to cite Li--Liu Lemma 2.5 directly and expanded the complementary-truncation and Brun nonnegative-majorant arguments in Proposition 4.1. The theorem and numerical bounds are unchanged.
 
 ## Files to upload
 
