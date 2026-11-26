@@ -234,7 +234,7 @@ Fix $a_*>0$ first and construct $\rho_x$ as in Section~\ref{sec:packing}, with r
 \end{proposition}
 
 \begin{proof}
-Fix the maximal divisor-function order $K_{\rm mom}$ used in the moment estimates before choosing $\kappa$. The orders are fixed by the number of Heath--Brown slots, the modulus factors and the squared coefficient bound in truncation. The requested saving $A$ changes logarithmic cutoffs and the number of integrations by parts, so $K_{\rm mom}$ is independent of $A$. Choose $0<\kappa<1/(2K_{\rm mom})$ small enough also to preserve the covering reserves and give total support $D_0\le X^{5/8+\xi}$ on each chart, with fixed small $\xi>0$. Smoothly discarding $rq<2x^{1-\kappa}$ costs $x^{1-\kappa+o(1)}$ by $\tau(rq-2)$ and $\sum_{d\ll x}1/\varphi(d)\ll L$.
+Fix the maximal divisor-function order $K_{\rm mom}$ used in the moment estimates before choosing $\kappa$. The orders are fixed by the number of Heath--Brown slots, the modulus factors and the squared coefficient bounds in truncation and endpoint smoothing. The requested saving $A$ changes logarithmic cutoffs and the number of integrations by parts, so $K_{\rm mom}$ is independent of $A$. Choose $0<\kappa<1/(2K_{\rm mom})$ small enough also to preserve the covering reserves and give total support $D_0\le X^{5/8+\xi}$ on each chart, with fixed small $\xi>0$. Smoothly discarding $rq<2x^{1-\kappa}$ costs $x^{1-\kappa+o(1)}$ by $\tau(rq-2)$ and $\sum_{d\ll x}1/\varphi(d)\ll L$.
 
 On an interval of length $O(X)$ inside $[1,O(x)]$ the $d_m$ sum is $O_m((X+x^{1-1/m})L^{m-1})$. Choose a largest factor in each ordered $m$-tuple. The product $d$ of the other factors satisfies $d\ll_m x^{1-1/m}$, and the last factor has $O(X/d+1)$ choices. For $m\le K_{\rm mom}$, $x^{1-1/m}\ll X$ by the choice of $\kappa$ and $X\gg x^{1-\kappa}$. The same bound applies after the shift by $2$. Cauchy--Schwarz and $\tau^h\le d_{2^h}$ give, for the needed $j,k$,
 \begin{equation}\label{eq:shifted_div}
@@ -276,7 +276,12 @@ choose nonnegative smooth majorants $F_0\ge|f_0|$ and $G_0\ge|g_0|$ (for instanc
 \[
 \sum_{(n,d)=1} f_0(n/U) U_z(n) = U\frac{\varphi(d)}{d}a_d\int f_0 + O\bigl(y_*\tau(d)(\|f_0\|_1 + \|f_0'\|_1)\bigr)
 \]
-and its $G_z$ analogue give total mean error $L^{O(1)}(MUV\varepsilon_X + M(U+V)y_* + My_*^2) \ll_A XL^{-A}$. Sharp interval indicators are retained via smooth error strips of relative width $L^{-B}$. This completes the proof of~\eqref{eq:distrib}.
+and its $G_z$ analogue give total mean error $L^{O(1)}(MUV\varepsilon_X + M(U+V)y_* + My_*^2) \ll_A XL^{-A}$. To handle a sharp endpoint in a long slot of scale $U$ (or $V$), replace its indicator by a smooth cutoff that differs only on strips of relative width $h=L^{-B}$, with derivatives of fixed order bounded by powers of $L$. There are $O(X(h+U^{-1}))$ tuples with that slot in a strip, since the product of the other dyadic scales is $O(X/U)$. Let $E$ be the set of products of these tuples. Estimate the smoothing error directly for the true rough sequences, without expanding the Brun majorants; then tuple multiplicities and absolute coefficients are bounded by $L^{O(1)}\tau(n)^C$ for fixed $C$. Using $|\rho_x(d)|\le1$ before any modulus factorization, the sum of the absolute progression and coprime-mean errors is bounded by
+\[
+L^{O(1)}\sum_{n\in E}\tau(n)^C\bigl(\tau(|n-2|)+L\bigr)
+\ll X L^{O(1)}(h+U^{-1})^{1/2}
+\]
+by Cauchy--Schwarz and~\eqref{eq:shifted_div}. Both long scales are positive powers of $X$, so choosing $B$ sufficiently large gives the required saving. Short-slot interval restrictions are kept in the coefficient of the short product. This completes the proof of~\eqref{eq:distrib}.
 \end{proof}
 
 \section{Limiting density and small-prime tail}\label{sec:density}
@@ -299,7 +304,9 @@ By the exit-series form of the linear sieve (with uniform prime-harmonic converg
 I_3 = 2\int_{0 < z < y < u < \rho}
 \frac{\normf((T-u-y-z)/z) - \normf((J-u-y-z)/z)}{uy z^2}\,du\,dy\,dz.
 \end{equation}
-For the small-$t_1$ branch ($t_1 < t_{1,\min}$ with fixed ordinary cap $\lambda_{\rm small} < 1/2$), the rank-one difference from $T$ is $2\int_0^{t_{1,\min}}|\normF(\lambda_{\rm small}/u-1)-\normF(T/u-1)|\,u^{-2}\,du = O(t_{1,\min})$ since $|\normF(s) - 1/(2e^\gamma)| \le \normD(s) \ll s^{-2}$ for $s \ge 9$, while the ideal integral~\eqref{eq:I3} over $u < t_{1,\min}$ is $O(t_{1,\min}(1+\log^2(\rho/t_{1,\min})))$. On $z < \delta'$ ($t_1 \ge t_{1,\min}$), all finite approximations keep $J - u - y \ge c > 0$, so by the fundamental lemma the residual density difference is $O(V(x^z)e^{-c'/z}) = O(C_2 z/L)$; integrating against the first two harmonic measures $\ll (1 + \log(\rho/z))^2$ and dyadic $z$ gives $O(\delta'(1 + \log^2(\rho/\delta'))C_2/L)$. On the compact remainder ($z \ge \delta'$, $t_1 \ge t_{1,\min}$), trimming switching walls and small-$t_3$ tails removes strips of arbitrarily small measure where the integrand of~\eqref{eq:I3} is bounded, taking $\rho' \uparrow \rho$ and lowering the frozen physical caps varies the compact residual limits continuously, and~\eqref{eq:G1} is already compact ($t_4 \ge 3/100$). Hence choosing $t_{1,\min}$, $\delta_0$, trimming widths, and cap drops sufficiently small gives an un-discretized full finite policy $\cT_{\rm full}$ of density at most $(U_0 + u_0 + o(1))C_2/L$ (or minus $G_1$). By Lemma~\ref{lem:first_exit}, $V(x^\eta)$ times the un-discretized rough-tree density $\cT_{\rm rough}^{(0)}$ retains only exits with $\ell_{\rm last}(e) \ge x^\eta$ and is at most the density of $\cT_{\rm full}$. Choosing $\eta$ small enough bounds the attachment error by $\tfrac{1}{2}u_0 C_2/L$, and then refining the alphabet at fixed $\eta$ bounds the discretization error between $\cT_{\rm rough}$ and $\cT_{\rm rough}^{(0)}$ by a further $\tfrac{1}{2}u_0 C_2/L$, yielding $\sum_d \rho_x(d)/\varphi(d) \le (U_0 + 2u_0 + o(1))C_2/L$ (or minus $G_1$). There is no separate single-prime top interval above $\mu_0$ because $\rho = 1/5 < 1/4$.
+For the small-$t_1$ branch ($t_1 < t_{1,\min}$ with fixed ordinary cap $\lambda_{\rm small} < 1/2$), the rank-one prefix has negative sign and its residual tree tests even slots, hence is the ordinary lower sieve. Choose $t_{1,\min}$ small enough that $\lambda_{\rm small}/t_{1,\min}-1$ exceeds $9$ and the fixed threshold for the uniform large-$s$ bound below. The absolute rank-one difference from $T$ in normalized density is $2\int_0^{t_{1,\min}}|\normf(\lambda_{\rm small}/u-1)-\normf(T/u-1)|\,u^{-2}\,du = O(t_{1,\min})$ since $|\normf(s) - 1/(2e^\gamma)| \le \normD(s) \ll s^{-2}$ for $s \ge 9$, while the ideal integral~\eqref{eq:I3} over $u < t_{1,\min}$ is $O(t_{1,\min}(1+\log^2(\rho/t_{1,\min})))$. For the discrete sums, write $V^-(D,y)$ for the density of the ordinary lower cubic sieve. For large $s=\log D/\log y$, the one-sided Rosser bound~\cite[Lemma~14.7]{SuzukiRosser}, together with $V^-(D,y)\le V(y)$ and $1-f(s)\ll s^{-2}$, gives $0\le V(y)-V^-(D,y)\ll V(y)s^{-2}$ uniformly. Indeed, with the sieve dimension and constants fixed, the lemma gives an error bounded by $V(y)CE(s)(\log D)^{-\Delta}$ for some fixed $\Delta>0$, where $E(s)\le \exp(-s\log s+s\log\log(3s)+O(s))$ for all $s\ge1$. This is $O(V(y)s^{-2})$ since $E(s)\ll s^{-2}$ and $\log D\ge\log 2$. Taking $y=x^u$ and $D$ equal to either rank-one residual level bounds the discrete density difference per prefix, before its factor $g(\ell_1)$, by $O(C_2 u/L)$. The harmonic prime measure is bounded on each dyadic $u$-interval, so summing gives $O(t_{1,\min}C_2/L)$.
+
+On $z < \delta'$ ($t_1 \ge t_{1,\min}$), all finite approximations keep $J - u - y \ge c > 0$, so the residual density difference is $O(V(x^z) z^2) = O(C_2 z/L)$ by the same uniform lower-sieve bound; integrating against the first two harmonic measures $\ll (1 + \log(\rho/z))^2$ and dyadic $z$ gives $O(\delta'(1 + \log^2(\rho/\delta'))C_2/L)$. On the compact remainder ($z \ge \delta'$, $t_1 \ge t_{1,\min}$), trimming switching walls and small-$t_3$ tails removes strips of arbitrarily small measure where the integrand of~\eqref{eq:I3} is bounded, taking $\rho' \uparrow \rho$ and lowering the frozen physical caps varies the compact residual limits continuously, and~\eqref{eq:G1} is already compact ($t_4 \ge 3/100$). Hence choosing $t_{1,\min}$, $\delta_0$, trimming widths, and cap drops sufficiently small gives an un-discretized full finite policy $\cT_{\rm full}$ of density at most $(U_0 + u_0 + o(1))C_2/L$ (or minus $G_1$). By Lemma~\ref{lem:first_exit}, $V(x^\eta)$ times the un-discretized rough-tree density $\cT_{\rm rough}^{(0)}$ retains only exits with $\ell_{\rm last}(e) \ge x^\eta$ and is at most the density of $\cT_{\rm full}$. Choosing $\eta$ small enough bounds the attachment error by $\tfrac{1}{2}u_0 C_2/L$, and then refining the alphabet at fixed $\eta$ bounds the discretization error between $\cT_{\rm rough}$ and $\cT_{\rm rough}^{(0)}$ by a further $\tfrac{1}{2}u_0 C_2/L$. Fixing all these parameters before taking $x\to\infty$ yields $\sum_d \rho_x(d)/\varphi(d) \le (U_0 + 2u_0 + o(1))C_2/L$ (or minus $G_1$). There is no separate single-prime top interval above $\mu_0$ because $\rho = 1/5 < 1/4$.
 
 To bound the small-$z$ tail of~\eqref{eq:I3} explicitly, let $\normD := \normF - \normf \ge 0$ and $\delta = 19/1000$. By~\eqref{eq:delay},
 \begin{equation}\label{eq:delay_D}
@@ -362,7 +369,7 @@ $K_3$ (for $U_0+2u_0$) & $\le$ & \texttt{3949437475976085820663535} \\
 $K_4$ (for $U_0+2u_0-G_1$) & $\le$ & \texttt{3930062966026102679764871} \\
 \bottomrule
 \end{tabular}
-\caption{Certified rational density components ($K_4 \approx 3.2508717$).}
+\caption{Certified rational density components ($K_4 \approx 3.2508719$).}
 \end{table}
 
 \begin{table}[ht]
@@ -446,6 +453,10 @@ preprint, arXiv:2309.08522v1 (2023).
 A.~Pascadi,
 \emph{On the exponents of distribution of primes and smooth numbers},
 preprint, arXiv:2505.00653v1 (2025).
+
+\bibitem{SuzukiRosser}
+Y.~Suzuki, \emph{The Rosser--Iwaniec sieve}, lecture notes,
+\url{https://www.suzuyu1729.com/notes/NagoyaSeminar2022/RosserIwaniec.pdf}.
 
 \end{thebibliography}
 

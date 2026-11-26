@@ -48,7 +48,7 @@ For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely man
 ## Files to upload
 
 - arXiv: `arxiv-src.zip` (contains only `paper.tex`; no bibliography file needed, no figures).
-- aiXiv / journals: `paper.pdf` (11 pages) plus the LaTeX source and `verify_twin_upper_sieve_cert.py`.
+- aiXiv / journals: `paper.pdf` (12 pages) plus the LaTeX source and `verify_twin_upper_sieve_cert.py`.
 
 ## License
 
@@ -57,7 +57,7 @@ For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely man
 
 ## Comments field
 
-11 pages. Includes a standalone pure-integer verifier (`verify_twin_upper_sieve_cert.py`, Python 3 standard library only) reproducing all rational bounds at denominator 2^80. Repository: https://github.com/wellingtonthu/twin-primes-1-67539 · DOI: 10.5281/zenodo.24547437 (v1.0.1; concept DOI 10.5281/zenodo.24539532)
+12 pages. Includes a standalone pure-integer verifier (`verify_twin_upper_sieve_cert.py`, Python 3 standard library only) reproducing all rational bounds at denominator 2^80. Repository: https://github.com/wellingtonthu/twin-primes-1-67539 · DOI: 10.5281/zenodo.24547437 (v1.0.1; concept DOI 10.5281/zenodo.24539532)
 
 ## Declarations
 

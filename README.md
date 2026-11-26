@@ -16,7 +16,7 @@ where $C_2 = 2\prod_{\ell > 2}\bigl(1 - (\ell - 1)^{-2}\bigr)$.
 
 This improves Li and Liu's unconditional Proposition $(1 - 1.75)$ ([arXiv:2606.05224v2](https://arxiv.org/abs/2606.05224v2), Theorem 1.2) by `0.07461`.
 
-**Revision note (`v1.0.1` + arXiv polish, 2026-11-26).** Added explicit uniform square-reserve proofs in Lemma 3.1 and §3.1, fixed the parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$) and $q>U^2$ Siegel--Walfisz tail in Proposition 4.1, corrected the two-group packing exponents, and added the citation to Chan. Subsequent pre-arXiv polish simplified Proposition 1.2 to cite Li--Liu Lemma 2.5 directly, expanded the complementary-truncation and Brun nonnegative-majorant details in Proposition 4.1, fixed the prime-power discrepancy exponent $O(x^{1-a_*/2+o(1)})$, and detailed the finite-policy density convergence in §5. The theorem and numerical bounds are unchanged.
+**Revision note (`v1.0.1` + arXiv polish, 2026-11-26).** Added explicit uniform square-reserve proofs in Lemma 3.1 and §3.1, fixed the parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$) and $q>U^2$ Siegel--Walfisz tail in Proposition 4.1, corrected the two-group packing exponents, and added the citation to Chan. Subsequent pre-arXiv polish simplified Proposition 1.2 to cite Li--Liu Lemma 2.5 directly, expanded the complementary-truncation and Brun nonnegative-majorant details in Proposition 4.1, fixed the prime-power discrepancy exponent $O(x^{1-a_*/2+o(1)})$, and detailed the finite-policy density convergence in §5. The rank-one residual now uses the lower sieve function, with a uniform bound for the discrete tails. The proof also details the error from smoothing long-slot endpoints. The theorem and exact numerical bounds are unchanged.
 
 ## Summary of Results
 
@@ -32,8 +32,8 @@ This improves Li and Liu's unconditional Proposition $(1 - 1.75)$ ([arXiv:2606.0
 ## Repository Contents
 
 - `paper.tex` — AMS-LaTeX (`amsart`) manuscript, author fields already filled; rebuild with `build.ps1`.
-- `paper.pdf` — prebuilt 11-page PDF (Latin Modern Type 1 throughout, no bitmap fonts).
-- `arxiv-src.zip` — arXiv source bundle (contains only `paper.tex`; compiles standalone to the same 11 pages).
+- `paper.pdf` — prebuilt 12-page PDF (Latin Modern Type 1 throughout, no bitmap fonts).
+- `arxiv-src.zip` — arXiv source bundle (contains only `paper.tex`; compiles standalone to the same 12 pages).
 - `TwinPrime-1-minus-a-SelfContained.md` — Markdown source of the complete mathematical argument.
 - `verify_twin_upper_sieve_cert.py` — Standalone pure-Python verifier using exact integer arithmetic at denominator $Q = 2^{80}$ (no floating-point operations in any certified bound, with an internal $44$-term Taylor cross-check at $s=4,\dots,12$).
 - `verify_output.txt` — Recorded run of the verifier (exit code 0, with script and PDF checksums).
@@ -53,10 +53,10 @@ Expected runtime is ~3 minutes, ending with exit code `0` and printing exact num
 - `Independent Taylor check: s=4,...,12 (both branches)`
 - `U0+2u <= 3949437475976085820663535/Q`
 - `G1 >= 19374509949983140898664/Q`
-- `K <= 3930062966026102679764871/Q` ($\approx 3.2508717$)
+- `K <= 3930062966026102679764871/Q` ($\approx 3.2508719$)
 - `c=12759/10000; b=67539/100000; ... margin >= 56380964408304863785/Q` ($> 0.0000466$)
 
-A prebuilt `paper.pdf` (11 pages) is included. It was compiled locally with TinyTeX (TeX Live 2026) using three `pdflatex` passes to settle references and PDF outlines; the log has zero errors, zero overfull boxes, zero undefined references, and **no bitmap (Type 3) fonts** (Latin Modern Type 1 throughout), so the file is arXiv-ready.
+A prebuilt `paper.pdf` (12 pages) is included. It was compiled locally with TinyTeX (TeX Live 2026) using three `pdflatex` passes to settle references and PDF outlines; the log has zero errors, zero overfull boxes, zero undefined references, and **no bitmap (Type 3) fonts** (Latin Modern Type 1 throughout), so the file is arXiv-ready.
 
 To rebuild it on any standard TeX Live / Overleaf / arXiv environment:
 
