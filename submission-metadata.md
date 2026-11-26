@@ -37,13 +37,13 @@ For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely man
 
 ## Published versions
 
-- aiXiv: `aixiv.261125.000002` — <https://aixiv.science/abs/aixiv.261125.000002> (`v1.2`, under review, serves the revised 11-page PDF matching Zenodo `v1.0.1`: <https://aixiv.science/pdf/aixiv.261125.000002v1.2.pdf>, CC-BY-4.0)
-- Zenodo: `10.5281/zenodo.24547437` (v1.0.1, archiving the full analytic revision + ORCID; supersedes `10.5281/zenodo.24539533` v1.0.0; concept DOI `10.5281/zenodo.24539532`)
+- aiXiv: `aixiv.261125.000002` — <https://aixiv.science/abs/aixiv.261125.000002> (`v1.2`, official review completed, currently serves the earlier 11-page PDF: <https://aixiv.science/pdf/aixiv.261125.000002v1.2.pdf>, CC-BY-4.0; `v1.3` pending)
+- Zenodo: `10.5281/zenodo.24552165` (v1.0.2, archiving the verified 12-page revision + ORCID; supersedes `10.5281/zenodo.24547437` v1.0.1 and `10.5281/zenodo.24539533` v1.0.0; concept DOI `10.5281/zenodo.24539532`)
 - arXiv: pending
 
-## Manuscript revision (`v1.0.1` + pre-arXiv polish, 2026-11-26)
+## Manuscript revision (`v1.0.2`, 2026-11-26)
 
-`v1.0.1` (archived in Zenodo `10.5281/zenodo.24547437` and aiXiv `v1.2`) includes the corrected two-group packing bound, explicit uniform square-reserve bounds in Lemma 3.1 and Section 3.1, fixed parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$), the $q>U^2$ Siegel--Walfisz check, and a reference to Chan's prefix sieve and semiprime subtraction. Subsequent pre-arXiv text polish simplified Proposition 1.2 to cite Li--Liu Lemma 2.5 directly, expanded the complementary-truncation and Brun nonnegative-majorant arguments in Proposition 4.1, corrected the prime-power discrepancy bound to $O(x^{1-a_*/2+o(1)})$, and detailed the finite-policy density convergence in Section 5. The theorem and numerical bounds are unchanged.
+`v1.0.2` is archived at Zenodo `10.5281/zenodo.24552165` and GitHub Release `v1.0.2`. It corrects the prime-power discrepancy bound to $O(x^{1-a_*/2+o(1)})$, gives the finite-policy density convergence with uniform lower-sieve discrete-tail estimates, details long-slot endpoint smoothing, and retains the preceding packing, truncation, and Brun-majorant corrections. The 12-page PDF and arXiv source were rebuilt locally, and the exact integer certificate passed with exit code 0. The theorem and exact numerical bounds are unchanged. The aiXiv record remains at `v1.2` pending upload of this same PDF as `v1.3`.
 
 ## Files to upload
 
@@ -57,7 +57,7 @@ For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely man
 
 ## Comments field
 
-12 pages. Includes a standalone pure-integer verifier (`verify_twin_upper_sieve_cert.py`, Python 3 standard library only) reproducing all rational bounds at denominator 2^80. Repository: https://github.com/wellingtonthu/twin-primes-1-67539 · DOI: 10.5281/zenodo.24547437 (v1.0.1; concept DOI 10.5281/zenodo.24539532)
+12 pages. Includes a standalone pure-integer verifier (`verify_twin_upper_sieve_cert.py`, Python 3 standard library only) reproducing all rational bounds at denominator 2^80. Repository: https://github.com/wellingtonthu/twin-primes-1-67539 · DOI: 10.5281/zenodo.24552165 (v1.0.2; concept DOI 10.5281/zenodo.24539532)
 
 ## Declarations
 
