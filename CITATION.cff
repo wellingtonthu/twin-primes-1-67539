@@ -3,7 +3,7 @@ message: "If you use this manuscript or certificate verifier, please cite it as 
 title: "A Self-Contained Proof of Proposition (1 - 1.67539) for the Twin Prime Problem"
 type: software
 repository-code: "https://github.com/wellingtonthu/twin-primes-1-67539"
-doi: "10.5281/zenodo.24539533"
+doi: "10.5281/zenodo.24547437"
 url: "https://aixiv.science/abs/aixiv.261125.000002"
 authors:
   - family-names: "Wei"
@@ -12,7 +12,7 @@ authors:
     email: "744140495@qq.com"
     orcid: "https://orcid.org/0009-0008-9652-2845"
 date-released: 2026-11-26
-version: "1.0.0"
+version: "1.0.1"
 license:
   - MIT
   - CC-BY-4.0

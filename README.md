@@ -2,11 +2,11 @@
 
 **Author:** Wei Lindong (Independent Researcher, [ORCID 0009-0008-9652-2845](https://orcid.org/0009-0008-9652-2845)) · **Code license:** MIT · **Manuscript / PDF license:** CC BY 4.0
 
-**Repository:** <https://github.com/wellingtonthu/twin-primes-1-67539> · **Citation DOI (v1.0.0):** [10.5281/zenodo.24539533](https://doi.org/10.5281/zenodo.24539533) · **Concept DOI (all versions):** [10.5281/zenodo.24539532](https://doi.org/10.5281/zenodo.24539532)
+**Repository:** <https://github.com/wellingtonthu/twin-primes-1-67539> · **Citation DOI (v1.0.1):** [10.5281/zenodo.24547437](https://doi.org/10.5281/zenodo.24547437) · **Concept DOI (all versions):** [10.5281/zenodo.24539532](https://doi.org/10.5281/zenodo.24539532)
 
 **Preprint:** [aiXiv aixiv.261125.000002](https://aixiv.science/abs/aixiv.261125.000002) · [PDF (v1.1)](https://aixiv.science/pdf/aixiv.261125.000002v1.1.pdf)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24539533.svg)](https://doi.org/10.5281/zenodo.24539533)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24547437.svg)](https://doi.org/10.5281/zenodo.24547437)
 
 Unconditional, self-contained proof and pure-integer directed certificate establishing **Proposition $(1 - 1.67539)$**: for every sufficiently large $x$, more than $0.0000466\,C_2 x / (\log x)^2$ primes $p \le x$ satisfy
 
@@ -16,7 +16,7 @@ where $C_2 = 2\prod_{\ell > 2}\bigl(1 - (\ell - 1)^{-2}\bigr)$.
 
 This improves Li and Liu's unconditional Proposition $(1 - 1.75)$ ([arXiv:2606.05224v2](https://arxiv.org/abs/2606.05224v2), Theorem 1.2) by `0.07461`.
 
-**Revision (2026-11-26).** Added explicit uniform square-reserve proofs in Lemma 3.1 and §3.1, fixed the parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$) and $q>U^2$ Siegel--Walfisz tail in Proposition 4.1, corrected the two-group packing exponents, and added the citation to Chan. The theorem and numerical bounds are unchanged; the v1.0.0 Zenodo deposit and v1.1 aiXiv record predate these analytic polish edits.
+**Revision note (`v1.0.1`, 2026-11-26).** Added explicit uniform square-reserve proofs in Lemma 3.1 and §3.1, fixed the parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$) and $q>U^2$ Siegel--Walfisz tail in Proposition 4.1, corrected the two-group packing exponents, and added the citation to Chan. The theorem and numerical bounds are unchanged. Zenodo `v1.0.1` archives this full revision; the earlier aiXiv `v1.1` record predates these analytic polish edits.
 
 ## Summary of Results
 
@@ -91,12 +91,12 @@ pdflatex paper.tex
   title        = {A Self-Contained Proof of Proposition (1--1.67539) for the Twin Prime Problem},
   year         = {2026},
   publisher    = {Zenodo},
-  version      = {v1.0.0},
-  doi          = {10.5281/zenodo.24539533},
-  url          = {https://doi.org/10.5281/zenodo.24539533}
+  version      = {v1.0.1},
+  doi          = {10.5281/zenodo.24547437},
+  url          = {https://doi.org/10.5281/zenodo.24547437}
 }
 ```
 
-Plain text: Wei Lindong, *A Self-Contained Proof of Proposition (1-1.67539) for the Twin Prime Problem*, v1.0.0, Zenodo (2026), doi:10.5281/zenodo.24539533.
+Plain text: Wei Lindong, *A Self-Contained Proof of Proposition (1-1.67539) for the Twin Prime Problem*, v1.0.1, Zenodo (2026), doi:10.5281/zenodo.24547437.
 
 To cite all versions of this project, use the concept DOI: doi:10.5281/zenodo.24539532.
