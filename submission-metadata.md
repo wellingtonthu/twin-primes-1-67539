@@ -37,13 +37,13 @@ For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely man
 
 ## Published versions
 
-- aiXiv: `aixiv.261125.000002` — <https://aixiv.science/abs/aixiv.261125.000002> (`v1.2`, official review completed, currently serves the earlier 11-page PDF: <https://aixiv.science/pdf/aixiv.261125.000002v1.2.pdf>, CC-BY-4.0; `v1.3` pending)
+- aiXiv: `aixiv.261125.000002` — <https://aixiv.science/abs/aixiv.261125.000002> (`v1.3`, under review, serves the verified 12-page PDF matching Zenodo `v1.0.2`: <https://aixiv.science/pdf/aixiv.261125.000002v1.3.pdf>, CC-BY-4.0)
 - Zenodo: `10.5281/zenodo.24552165` (v1.0.2, archiving the verified 12-page revision + ORCID; supersedes `10.5281/zenodo.24547437` v1.0.1 and `10.5281/zenodo.24539533` v1.0.0; concept DOI `10.5281/zenodo.24539532`)
 - arXiv: pending
 
 ## Manuscript revision (`v1.0.2`, 2026-11-26)
 
-`v1.0.2` is archived at Zenodo `10.5281/zenodo.24552165` and GitHub Release `v1.0.2`. It corrects the prime-power discrepancy bound to $O(x^{1-a_*/2+o(1)})$, gives the finite-policy density convergence with uniform lower-sieve discrete-tail estimates, details long-slot endpoint smoothing, and retains the preceding packing, truncation, and Brun-majorant corrections. The 12-page PDF and arXiv source were rebuilt locally, and the exact integer certificate passed with exit code 0. The theorem and exact numerical bounds are unchanged. The aiXiv record remains at `v1.2` pending upload of this same PDF as `v1.3`.
+`v1.0.2` is archived at Zenodo `10.5281/zenodo.24552165` and GitHub Release `v1.0.2`. It corrects the prime-power discrepancy bound to $O(x^{1-a_*/2+o(1)})$, gives the finite-policy density convergence with uniform lower-sieve discrete-tail estimates, details long-slot endpoint smoothing, and retains the preceding packing, truncation, and Brun-majorant corrections. The 12-page PDF and arXiv source were rebuilt locally, and the exact integer certificate passed with exit code 0. The theorem and exact numerical bounds are unchanged. aiXiv `v1.3` now serves the same 12-page PDF and is under review.
 
 ## Files to upload
 

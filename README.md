@@ -4,7 +4,7 @@
 
 **Repository:** <https://github.com/wellingtonthu/twin-primes-1-67539> · **Citation DOI (v1.0.2):** [10.5281/zenodo.24552165](https://doi.org/10.5281/zenodo.24552165) · **Concept DOI (all versions):** [10.5281/zenodo.24539532](https://doi.org/10.5281/zenodo.24539532)
 
-**Preprint:** [aiXiv aixiv.261125.000002](https://aixiv.science/abs/aixiv.261125.000002) · [PDF (v1.2)](https://aixiv.science/pdf/aixiv.261125.000002v1.2.pdf)
+**Preprint:** [aiXiv aixiv.261125.000002](https://aixiv.science/abs/aixiv.261125.000002) · [PDF (v1.3)](https://aixiv.science/pdf/aixiv.261125.000002v1.3.pdf)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24552165.svg)](https://doi.org/10.5281/zenodo.24552165)
 
