@@ -4,7 +4,7 @@
 
 **Repository:** <https://github.com/wellingtonthu/twin-primes-1-67539> · **Citation DOI (v1.0.1):** [10.5281/zenodo.24547437](https://doi.org/10.5281/zenodo.24547437) · **Concept DOI (all versions):** [10.5281/zenodo.24539532](https://doi.org/10.5281/zenodo.24539532)
 
-**Preprint:** [aiXiv aixiv.261125.000002](https://aixiv.science/abs/aixiv.261125.000002) · [PDF (v1.1)](https://aixiv.science/pdf/aixiv.261125.000002v1.1.pdf)
+**Preprint:** [aiXiv aixiv.261125.000002](https://aixiv.science/abs/aixiv.261125.000002) · [PDF (v1.2)](https://aixiv.science/pdf/aixiv.261125.000002v1.2.pdf)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24547437.svg)](https://doi.org/10.5281/zenodo.24547437)
 
@@ -16,7 +16,7 @@ where $C_2 = 2\prod_{\ell > 2}\bigl(1 - (\ell - 1)^{-2}\bigr)$.
 
 This improves Li and Liu's unconditional Proposition $(1 - 1.75)$ ([arXiv:2606.05224v2](https://arxiv.org/abs/2606.05224v2), Theorem 1.2) by `0.07461`.
 
-**Revision note (`v1.0.1`, 2026-11-26).** Added explicit uniform square-reserve proofs in Lemma 3.1 and §3.1, fixed the parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$) and $q>U^2$ Siegel--Walfisz tail in Proposition 4.1, corrected the two-group packing exponents, and added the citation to Chan. The theorem and numerical bounds are unchanged. Zenodo `v1.0.1` archives this full revision; the earlier aiXiv `v1.1` record predates these analytic polish edits.
+**Revision note (`v1.0.1`, 2026-11-26).** Added explicit uniform square-reserve proofs in Lemma 3.1 and §3.1, fixed the parameter selection order ($a_*$, $K_{\rm mom}$, $\kappa$) and $q>U^2$ Siegel--Walfisz tail in Proposition 4.1, corrected the two-group packing exponents, and added the citation to Chan. The theorem and numerical bounds are unchanged. Both Zenodo `v1.0.1` and aiXiv `v1.2` match this full revision.
 
 ## Summary of Results
 
