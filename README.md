@@ -80,6 +80,7 @@ rerun in a separate audit.
 ## Archive and citation
 
 Source repository: [wellingtonthu/twin-primes-1-67539](https://github.com/wellingtonthu/twin-primes-1-67539).
+This release is archived as [Zenodo v1.0.4](https://doi.org/10.5281/zenodo.24591257).
 The preceding version is archived as [Zenodo v1.0.3](https://doi.org/10.5281/zenodo.24582753).
 The previous published $1-1.67539$ manuscript is archived at
 [Zenodo v1.0.2](https://doi.org/10.5281/zenodo.24552165)
