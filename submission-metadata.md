@@ -37,7 +37,10 @@ For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely man
 
 ## Current release
 
-Zenodo `v1.0.3`, [2026-11-27](https://doi.org/10.5281/zenodo.24582753). The delayed four-slot sieve and
+Version `v1.0.4` corrects an intermediate inequality in the Baker--Harman
+comparison without changing the main theorem or certified numerical bounds.
+The preceding version is [Zenodo `v1.0.3`](https://doi.org/10.5281/zenodo.24582753).
+The delayed four-slot sieve and
 [Ibarra's Chen lower bound](https://doi.org/10.5281/zenodo.24545780) improve the
 baseline from 1.67539 to 1.67440 with the same stated density lower bound.
 
@@ -59,7 +62,7 @@ baseline from 1.67539 to 1.67440 with the same stated density lower bound.
 
 ## Comments field
 
-14 pages. Directed integer certificates for Proposition (1-1.67440). The W4 replay uses Python 3.10+ and a C++20 compiler with 128-bit integer support. Repository: https://github.com/wellingtonthu/twin-primes-1-67539 · DOI: https://doi.org/10.5281/zenodo.24582753 (v1.0.3)
+14 pages. Directed integer certificates for Proposition (1-1.67440). The W4 replay uses Python 3.10+ and a C++20 compiler with 128-bit integer support. Repository: https://github.com/wellingtonthu/twin-primes-1-67539 · Concept DOI: https://doi.org/10.5281/zenodo.24539532
 
 ## Declarations
 

@@ -20,5 +20,5 @@
   "license": "cc-by-4.0",
   "access_right": "open",
   "notes": "The manuscript and PDF are CC BY 4.0. The baseline verifier and the W4 Python and C++ verification code are MIT-licensed. Complete replay: python w4/verify_w4_certificate.py --recompute-baseline (Python 3.10+ and a C++20 compiler with __int128 support).",
-  "version": "v1.0.3"
+  "version": "v1.0.4"
 }

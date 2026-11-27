@@ -2,7 +2,7 @@
 
 **Author:** Wei Lindong (Independent Researcher, [ORCID 0009-0008-9652-2845](https://orcid.org/0009-0008-9652-2845)) · **Code license:** MIT · **Manuscript / PDF license:** CC BY 4.0
 
-**Version 1.0.3.** For all sufficiently large $x$, more than
+**Version 1.0.4.** For all sufficiently large $x$, more than
 $0.0000466\,C_2x/(\log x)^2$ primes $p\le x$ satisfy
 $$
 p+2=rq,\qquad q\text{ prime},\qquad r\in\{1\}\cup\mathbb P,
@@ -14,6 +14,9 @@ The delayed four-slot sieve and [Ibarra's Chen lower bound](https://doi.org/10.5
 strengthen the baseline four-slot result from $1-1.67539$ to $1-1.67440$.
 This also improves [Li and Liu's $1-1.75$](https://arxiv.org/abs/2606.05224v2)
 by $0.07560$ in the exponent.
+
+Version 1.0.4 corrects an intermediate inequality in the comparison with
+Baker and Harman. The main theorem and certified numerical bounds are unchanged.
 
 | Construction | Proposition | Bound on $r$ |
 |---|---:|---:|
@@ -77,7 +80,7 @@ rerun in a separate audit.
 ## Archive and citation
 
 Source repository: [wellingtonthu/twin-primes-1-67539](https://github.com/wellingtonthu/twin-primes-1-67539).
-This release is archived as [Zenodo v1.0.3](https://doi.org/10.5281/zenodo.24582753).
+The preceding version is archived as [Zenodo v1.0.3](https://doi.org/10.5281/zenodo.24582753).
 The previous published $1-1.67539$ manuscript is archived at
 [Zenodo v1.0.2](https://doi.org/10.5281/zenodo.24552165)
 and [aiXiv v1.3](https://aixiv.science/pdf/aixiv.261125.000002v1.3.pdf).
