@@ -1,18 +1,19 @@
 cff-version: 1.2.0
 message: "If you use this manuscript or certificate verifier, please cite it as below."
-title: "A Self-Contained Proof of Proposition (1 - 1.67539) for the Twin Prime Problem"
+title: "A Self-Contained Proof of Proposition (1 - 1.67440) for the Twin Prime Problem"
 type: software
 repository-code: "https://github.com/wellingtonthu/twin-primes-1-67539"
-doi: "10.5281/zenodo.24552165"
-url: "https://aixiv.science/abs/aixiv.261125.000002"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24539532"
+    description: "Concept DOI for the archived project versions."
 authors:
   - family-names: "Wei"
     given-names: "Lindong"
     affiliation: "Independent Researcher"
     email: "744140495@qq.com"
     orcid: "https://orcid.org/0009-0008-9652-2845"
-date-released: 2026-11-26
-version: "1.0.2"
+version: "1.0.3"
 license:
   - MIT
   - CC-BY-4.0
@@ -23,7 +24,7 @@ keywords:
   - level of distribution
   - directed integer certificate
 abstract: >-
-  Unconditional proof of Proposition (1 - 1.67539) for the twin prime problem,
-  combining Runbo Li's 1.2759 Chen lower bound with a self-contained positive
-  upper-sieve majorant at distribution level 5/8 and a pure-integer directed
-  certificate at denominator 2^80.
+  Unconditional proof of Proposition (1 - 1.67440) for the twin prime problem.
+  The proof uses Ibarra's 1.2806 Chen lower bound, a positive upper sieve at
+  distribution level 5/8, a delayed four-slot refinement, and directed integer
+  certificates.

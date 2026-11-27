@@ -1,24 +1,24 @@
-# A positive upper sieve for balanced semiprimes at distance two
+# A Self-Contained Proof of Proposition (1-1.67440) for the Twin Prime Problem
 
 Let \(C_2=2\prod_{\ell>2}(1-(\ell-1)^{-2})\) and \(H(x)=C_2x/(\log x)^2\). For \(0<b<1\), let \(A_b(x)\) count primes \(p\le x\) for which \(p+2=rq\) with \(q\) prime, \(r=1\) or prime, and \(r\le q^b\).
 
-**Theorem.** Proposition \((1-1.67539)\) is true unconditionally. More precisely, at \(b=67539/100000\),
+**Theorem.** Proposition \((1-1.67440)\) is true unconditionally. More precisely, at \(b=3372/5000\),
 \[
 \liminf_{x\to\infty} A_b(x)/H(x)
-\ \ge\ \frac{56380964408304863785}{1208925819614629174706176}
+\ \ge\ \frac{61483810070100487491}{1208925819614629174706176}
 \ >\ 0.0000466 .
 \]
-In particular \(A_b(x)>0.0000466 H(x)\) for every sufficiently large \(x\). The rank-three construction alone gives Proposition \((1-1.6767)\). Both improve Li–Liu's unconditional Proposition \((1-1.75)\), arXiv:2606.05224v2, Theorem 1.2.
+In particular \(A_b(x)>0.0000466 H(x)\) for every sufficiently large \(x\). The baseline four-slot construction gives \((1-1.67539)\), and the rank-three construction alone gives \((1-1.6767)\). All improve Li–Liu's unconditional Proposition \((1-1.75)\), arXiv:2606.05224v2, Theorem 1.2.
 
-The external inputs for the theorem are Runbo Li's published Chen count (*Mathematical Reports* **28** (2026), 39–61, Theorem 1.3, arXiv:2405.05727v4), Pascadi's fixed nonzero residue convolution estimate (arXiv:2505.00653v1, Proposition 4.4), the classical prime number theorem, Mertens, prime and Möbius Siegel–Walfisz, the multiplicative large sieve and the complete Weil bound for Kloosterman sums, and the standard dimension-one linear Rosser sieve and fundamental lemma (Iwaniec, *Acta Arith.* **36** (1980), 171–202; Friedlander–Iwaniec, *Opera de Cribro*). All distribution deductions for the new weights and the interval calculation are given below.
+The external inputs for the theorem are Runbo Li's published Chen count (*Mathematical Reports* **28** (2026), 39–61, Theorem 1.3, arXiv:2405.05727v4), [Ibarra's Theorem B](https://doi.org/10.5281/zenodo.24545780) improving its constant from \(1.2759\) to \(1.2806\) for the final subtraction, Pascadi's fixed nonzero residue convolution estimate (arXiv:2505.00653v1, Proposition 4.4), the classical prime number theorem, Mertens, prime and Möbius Siegel–Walfisz, the multiplicative large sieve and the complete Weil bound for Kloosterman sums, and the standard dimension-one linear Rosser sieve and fundamental lemma (Iwaniec, *Acta Arith.* **36** (1980), 171–202; Friedlander–Iwaniec, *Opera de Cribro*). All distribution deductions for the new weights and the interval calculation are given below.
 
 We adapt [Chan's Goldbach argument](https://aixiv.science/pdf/aixiv.261111.000001v1.0.pdf), in particular the positive prefix sieve, the rank-three and rank-four cap changes (Appendix F), and the subtraction of excluded semiprimes (§8). At the fixed residue 2, we use Pascadi's \(5/8\) estimate and verify the modified modulus factorizations and density bounds for the resulting sieve.
 
 ## 1. The subtraction and an elementary shortcut
 
-Let \(B_b(x)\) count primes \(p\le x\) with \(p+2=rq\), \(r,q\) prime and \(q^b<r\le q\). Order the two factors; each semiprime then has exactly one factorization, including squares. Prime residuals all belong to \(A_b\). Allowing for at most one exception at \(p=2\), Li's theorem gives
+Let \(B_b(x)\) count primes \(p\le x\) with \(p+2=rq\), \(r,q\) prime and \(q^b<r\le q\). Order the two factors; each semiprime then has exactly one factorization, including squares. Prime residuals all belong to \(A_b\). Let \(c_{\rm low}\in\{12759/10000,6403/5000\}\), with the first value supplied by Li and the second by Ibarra. Allowing for at most one exception at \(p=2\), either input gives
 \[
-\liminf_{x\to\infty}A_b(x)/H(x)\ \ge\ 12759/10000-\limsup_{x\to\infty}B_b(x)/H(x).
+\liminf_{x\to\infty}A_b(x)/H(x)\ \ge\ c_{\rm low}-\limsup_{x\to\infty}B_b(x)/H(x).
 \tag{1}
 \]
 In odd moduli the congruence for \(rq-2\) is \(rq\equiv2\); the two-prime sequence has local density \(g(\ell)=1/(\ell-1)\) for odd primes \(\ell\), with no factor at 2. Indeed \((1-g(\ell))/(1-1/\ell)=1-(\ell-1)^{-2}\). Thus, with \(P(y)=\prod_{2<\ell<y}\ell\) and \(V(y)=\prod_{2<\ell<y}(1-g(\ell))\),
@@ -236,9 +236,10 @@ For detail on the majorants, set \(t=\log r/L,\ y=rq/x,\ \beta_b=b/(1+b)\). On \
 \(\int_{\beta_b}^{1/2}dt/[t(1-t)]=\log(1/b)\). It follows that
 \[
 \limsup_{x\to\infty} B_b(x)/H(x)\le K\log(1/b),\qquad
-\liminf_{x\to\infty} A_b(x)/H(x)\ge12759/10000-K\log(1/b).
+\liminf_{x\to\infty} A_b(x)/H(x)\ge c_{\rm low}-K\log(1/b).
 \tag{18}
 \]
+Here \(c_{\rm low}=12759/10000\) for the baseline table and \(6403/5000\) for the main theorem.
 
 ## 7. Directed certificate
 
@@ -328,4 +329,4 @@ K^{\rm new}\le3929839217556685433665497/Q.
 \liminf_{x\to\infty}A_b(x)/H(x)
 \ge61483810070100487491/Q>0.0000466.
 \]
-Thus Proposition \((1-1.67440)\) holds with the stated density.
+This proves the main theorem.

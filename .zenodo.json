@@ -1,8 +1,8 @@
 {
-  "title": "A Self-Contained Proof of Proposition (1 - 1.67539) for the Twin Prime Problem",
+  "title": "A Self-Contained Proof of Proposition (1 - 1.67440) for the Twin Prime Problem",
   "upload_type": "publication",
   "publication_type": "preprint",
-  "description": "Self-contained proof of Proposition (1 - 1.67539) on twin primes (p + 2 = rq, r = 1 or prime, r <= q^{0.67539}) with a standalone pure-integer verifier at denominator 2^80, improving Li and Liu's (1 - 1.75).",
+  "description": "Self-contained proof of Proposition (1 - 1.67440) on twin primes (p + 2 = rq, r = 1 or prime, r <= q^{0.67440}), using Ibarra's 1.2806 Chen lower bound and a delayed four-slot refinement, with directed integer certificates at denominator 2^80, improving Li and Liu's (1 - 1.75).",
   "creators": [
     {
       "name": "Wei, Lindong",
@@ -19,5 +19,6 @@
   ],
   "license": "cc-by-4.0",
   "access_right": "open",
-  "notes": "Code (verify_twin_upper_sieve_cert.py) is MIT-licensed; the manuscript and PDF are CC BY 4.0. Standalone verifier: python verify_twin_upper_sieve_cert.py (Python 3.10+, standard library only)."
+  "notes": "The manuscript and PDF are CC BY 4.0. The baseline verifier and the W4 Python and C++ verification code are MIT-licensed. Complete replay: python w4/verify_w4_certificate.py --recompute-baseline (Python 3.10+ and a C++20 compiler with __int128 support).",
+  "version": "v1.0.3"
 }

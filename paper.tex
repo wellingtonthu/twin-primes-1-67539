@@ -22,19 +22,19 @@
 
 \numberwithin{equation}{section}
 
-\title[On Proposition $(1-1.67539)$ for the Twin Prime Problem]{A Self-Contained Proof of Proposition $(1-1.67539)$\\ for the Twin Prime Problem}
+\title[On Proposition $(1-1.67440)$ for the Twin Prime Problem]{A Self-Contained Proof of Proposition $(1-1.67440)$\\ for the Twin Prime Problem}
 
 \author{Wei Lindong}
 \address{Independent Researcher}
 \email{744140495@qq.com}
 \hypersetup{
-  pdftitle={A Self-Contained Proof of Proposition (1-1.67539) for the Twin Prime Problem},
+  pdftitle={A Self-Contained Proof of Proposition (1-1.67440) for the Twin Prime Problem},
   pdfauthor={Wei Lindong},
   pdfsubject={Analytic number theory; sieve methods},
   pdfkeywords={twin prime problem, Chen's theorem, weighted sieve, level of distribution, integer certificate}
 }
 
-\date{November 26, 2026}
+\date{November 27, 2026}
 
 \subjclass[2020]{Primary 11N36; Secondary 11N05, 11P32}
 \keywords{Twin prime problem, Chen's theorem, weighted sieve, level of distribution, directed integer certificate}
@@ -42,7 +42,7 @@
 \begin{document}
 
 \begin{abstract}
-For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely many primes $p$ such that $p+2 = rq$ with $q$ prime, $r=1$ or prime, and $r \le q^{a-1}$. Li and Liu recently established Proposition $(1-1.75)$ unconditionally. By combining Runbo Li's published lower bound $\pi_{1,2}(x) \ge 1.2759\,C_2 x/(\log x)^2$ with a self-contained positive upper-sieve majorant at distribution level $5/8$ (derived from Pascadi's fixed-residue convolution estimate) and a directed pure-integer interval certificate at denominator $2^{80}$, we prove Proposition $(1-1.67539)$ unconditionally. More precisely, writing $A_b(x)$ for the number of primes $p \le x$ satisfying $p+2 = rq$ with $r \le q^b$, we obtain $A_{67539/100000}(x) > 0.0000466\,C_2 x/(\log x)^2$ for all sufficiently large $x$. We also record an elementary one-page two-factor shortcut yielding Proposition $(1-1.7078)$ and a rank-three baseline yielding Proposition $(1-1.6767)$.
+For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely many primes $p$ such that $p+2 = rq$ with $q$ prime, $r=1$ or prime, and $r \le q^{a-1}$. Li and Liu recently established Proposition $(1-1.75)$ unconditionally. By combining Ibarra's lower bound $\pi_{1,2}(x) > 1.2806\,C_2 x/(\log x)^2$ (improving Runbo Li's published $1.2759$ bound) with a self-contained positive upper-sieve majorant at distribution level $5/8$, a delayed four-slot refinement, and directed integer certificates, we prove Proposition $(1-1.67440)$ unconditionally. More precisely, writing $A_b(x)$ for the number of primes $p \le x$ satisfying $p+2 = rq$ with $r \le q^b$, we obtain $A_{3372/5000}(x) > 0.0000466\,C_2 x/(\log x)^2$ for all sufficiently large $x$. We also record an elementary two-factor shortcut yielding Proposition $(1-1.7078)$, a rank-three baseline yielding Proposition $(1-1.6767)$, and the baseline four-slot bound $(1-1.67539)$.
 \end{abstract}
 
 \maketitle
@@ -65,36 +65,36 @@ In~\cite[Theorem~1.2]{LiLiu2026}, Li and Liu proved Proposition $(1-1.75)$ uncon
 \[
 A_{3/4}(x) > 0.036\,H(x)
 \]
-for sufficiently large $x$. Under a weighted Elliott--Halberstam conjecture $\mathrm{WEH}(0.999)$, they improved the exponent to $(1-1.4)$~\cite[Theorem~1.4]{LiLiu2026}. Our main result strengthens the unconditional bound from $1.75$ to $1.67539$.
+for sufficiently large $x$. Under a weighted Elliott--Halberstam conjecture $\mathrm{WEH}(0.999)$, they improved the exponent to $(1-1.4)$~\cite[Theorem~1.4]{LiLiu2026}. Our main result strengthens the unconditional bound from $1.75$ to $1.67440$.
 
 \begin{theorem}\label{thm:main}
-Proposition $(1-1.67539)$ holds unconditionally. Specifically, for $b = 67539/100000$,
+Proposition $(1-1.67440)$ holds unconditionally. Specifically, for $b = 3372/5000$,
 \begin{equation}\label{eq:main_margin}
 \liminf_{x\to\infty}\frac{A_b(x)}{H(x)}
-\ \ge\ \frac{56380964408304863785}{1208925819614629174706176}
+\ \ge\ \frac{61483810070100487491}{1208925819614629174706176}
 \ >\ 0.0000466.
 \end{equation}
-In particular, $A_{67539/100000}(x) > 0.0000466\,H(x)$ for every sufficiently large $x$. Without the fourth-rank cap replacement, the rank-three construction alone establishes Proposition $(1-1.6767)$, while an elementary two-factor shortcut proves Proposition $(1-1.7078)$.
+In particular, $A_{3372/5000}(x) > 0.0000466\,H(x)$ for every sufficiently large $x$. Without the delayed four-slot refinement, the baseline four-slot construction establishes Proposition $(1-1.67539)$; the rank-three construction alone gives $(1-1.6767)$, and an elementary two-factor shortcut proves $(1-1.7078)$.
 \end{theorem}
 
 \subsection{Comparison with related work}
 It is helpful to distinguish Theorem~\ref{thm:main} from related results on shifted primes $p+2$:
 \begin{itemize}
-\item \emph{Chen's theorem density.} Runbo Li~\cite[Theorem~1.3]{RunboLi2026} established the lower bound $\pi_{1,2}(x) \ge 1.2759\,H(x)$ for $\pi_{1,2}(x) = \#\{p \le x : p+2 \in P_2\}$, using Pascadi's distribution results~\cite{Pascadi2025}. Our proof uses Li's $1.2759$ lower bound directly as a modular input.
+\item \emph{Chen's theorem density.} Runbo Li~\cite[Theorem~1.3]{RunboLi2026} established $\pi_{1,2}(x) \ge 1.2759\,H(x)$ for $\pi_{1,2}(x) = \#\{p \le x : p+2 \in P_2\}$. Ibarra~\cite[Theorem~B]{Ibarra2026} subsequently improved this input to $\pi_{1,2}(x)>1.2806\,H(x)$. Our baseline certificate uses Li's published constant, while the main theorem uses Ibarra's improvement.
 \item \emph{Largest prime factor.} Baker and Harman~\cite{BakerHarman1996} (discussed in~\cite[\S 1.4]{LiLiu2026}) showed that $P^+(p+2) > p^{0.676}$ infinitely often, giving $p+2 = rq$ with $q$ prime and $r \le p^{0.324} \le q^{0.48}$. However, the cofactor $r$ in Baker--Harman's theorem is an arbitrary integer that may have three or more prime factors, whereas Theorem~\ref{thm:main} retains Chen's condition $\Omega(p+2) \le 2$ ($r=1$ or $r$ prime).
 \item \emph{Twin-prime upper bounds and Goldbach analogues.} Building on Lichtman~\cite{Lichtman2023} (who obtained $3.229\,H(x)$ at level $66/107$), Pascadi~\cite[Corollary~1.4]{Pascadi2025} proved $\pi_2(x) \le (3.203 + o(1))H(x)$ using an unconditional $5/8$ distribution level~\cite[Proposition~4.4 and Theorem~5.4]{Pascadi2025}. We adapt Chan's positive prefix sieve and subtraction of excluded semiprimes from the Chen count~\cite[\S\S 4 and 8 and Appendix~F]{Chan2026}. At the fixed residue $2$, we use Pascadi's $5/8$ estimate, verify the modified rank-three and rank-four modulus factorizations for prime pairs $rq$, and certify the resulting density bounds with directed integer arithmetic.
 \end{itemize}
 
 \subsection{Inputs and organization}
-The external analytic inputs are Runbo Li's Theorem~1.3~\cite{RunboLi2026}; Pascadi's fixed nonzero residue convolution estimate~\cite[Proposition~4.4]{Pascadi2025} (which itself relies on Deshouillers--Iwaniec~\cite{DeshouillersIwaniec1982}, Watt, and Pascadi's exceptional Maass-form large sieve); Iwaniec's well-factorable linear Rosser sieve and the fundamental lemma~\cite{Iwaniec1980,Iwaniec1980b,FriedlanderIwaniec2010}; and the classical prime number theorem, Mertens's estimates, prime and M\"obius Siegel--Walfisz bounds, the multiplicative large sieve, and the Weil bound for Kloosterman sums. No external distribution theorem or density bound for the constructed coefficient is assumed.
+The external analytic inputs are Runbo Li's Theorem~1.3~\cite{RunboLi2026}, Ibarra's Theorem~B~\cite{Ibarra2026} for the final subtraction, Pascadi's fixed nonzero residue convolution estimate~\cite[Proposition~4.4]{Pascadi2025} (which itself relies on Deshouillers--Iwaniec~\cite{DeshouillersIwaniec1982}, Watt, and Pascadi's exceptional Maass-form large sieve); Iwaniec's well-factorable linear Rosser sieve and the fundamental lemma~\cite{Iwaniec1980,Iwaniec1980b,FriedlanderIwaniec2010}; and the classical prime number theorem, Mertens's estimates, prime and M\"obius Siegel--Walfisz bounds, the multiplicative large sieve, and the Weil bound for Kloosterman sums. No external distribution theorem or density bound for the constructed coefficient is assumed.
 
-In the remainder of Section~\ref{sec:intro}, we reduce $A_b(x)$ to subtracting the bad semiprimes $B_b(x)$ and present the one-page shortcut to $(1-1.7078)$. Section~\ref{sec:tree} defines the rank-three and rank-four upper-sieve trees and proves the pointwise first-exit identity. Section~\ref{sec:packing} verifies the capacity conditions for Pascadi~\cite[eq.~(4.15)]{Pascadi2025} (including the $C<1$ two-factor repair and three-slot $W$ packing) and realizes a single finite signed coefficient $\rho_x$. Section~\ref{sec:distribution} establishes the uniform prime-pair distribution estimate for $\rho_x$ at fixed residue $2$. Sections~\ref{sec:density} and~\ref{sec:bad_pairs} compute the limiting density, bound the small-prime tail, and transfer the majorant to $B_b(x)$. Section~\ref{sec:certificate} describes the standalone integer certificate script \texttt{verify\_twin\_upper\_sieve\_cert.py} and records the certified rational bounds.
+In the remainder of Section~\ref{sec:intro}, we reduce $A_b(x)$ to subtracting the bad semiprimes $B_b(x)$ and present the one-page shortcut to $(1-1.7078)$. Section~\ref{sec:tree} defines the rank-three and rank-four upper-sieve trees and proves the pointwise first-exit identity. Section~\ref{sec:packing} verifies the capacity conditions for Pascadi~\cite[eq.~(4.15)]{Pascadi2025} (including the $C<1$ two-factor repair and the delayed greedy packing) and realizes a single finite signed coefficient $\rho_x$. Section~\ref{sec:distribution} establishes the uniform prime-pair distribution estimate for $\rho_x$ at fixed residue $2$. Sections~\ref{sec:density} and~\ref{sec:bad_pairs} compute the limiting density, bound the small-prime tail, and transfer the majorant to $B_b(x)$. Section~\ref{sec:certificate} describes the baseline and delayed greedy certificates and records the exact bounds.
 
 \subsection{The subtraction identity and an elementary shortcut}
-Let $B_b(x)$ count the primes $p \le x$ such that $p+2 = rq$ with $r,q$ prime and $q^b < r \le q$. Ordering the two prime factors ensures that every composite $P_2$ remainder has a unique factorization $r \le q$ (squares contribute to $B_b$), while prime remainders ($r=1$) belong to $A_b$. Allowing for at most one exception at $p=2$, Runbo Li's lower bound~\cite[Theorem~1.3]{RunboLi2026} gives
+Let $B_b(x)$ count the primes $p \le x$ such that $p+2 = rq$ with $r,q$ prime and $q^b < r \le q$. Ordering the two prime factors ensures that every composite $P_2$ remainder has a unique factorization $r \le q$ (squares contribute to $B_b$), while prime remainders ($r=1$) belong to $A_b$. Let $c_{\rm low}\in\{12759/10000,6403/5000\}$. The first choice is Runbo Li's published lower bound~\cite[Theorem~1.3]{RunboLi2026}, and the second is Ibarra's improvement~\cite[Theorem~B]{Ibarra2026}. Allowing for at most one exception at $p=2$, either choice gives
 \begin{equation}\label{eq:sub}
 \liminf_{x\to\infty}\frac{A_b(x)}{H(x)}
-\ \ge\ \frac{12759}{10000} - \limsup_{x\to\infty}\frac{B_b(x)}{H(x)}.
+\ \ge\ c_{\rm low} - \limsup_{x\to\infty}\frac{B_b(x)}{H(x)}.
 \end{equation}
 
 In odd moduli $d$, the congruence $rq-2 \equiv 0 \pmod d$ reads $rq \equiv 2 \pmod d$. The two-prime sequence has local density $g(\ell) = 1/(\ell-1)$ for odd primes $\ell$, with no factor at $2$. Since $(1-g(\ell))/(1-1/\ell) = 1 - (\ell-1)^{-2}$, putting $P(y) = \prod_{2 < \ell < y}\ell$ and $V(y) = \prod_{2 < \ell < y}(1-g(\ell))$ yields
@@ -355,12 +355,12 @@ Let $K$ be an upper bound for the density of the chosen rule, in units of $C_2/L
 In coordinates $t = \log r/L$ and $y = rq/x$, on $y \ge \sigma > 0$ the inequalities $q^b < r \le q$ and $rq \le x+2$ match $\beta_b := b/(1+b) < t \le 1/2$ up to $O_\sigma(1/L)$, while $y \le \sigma$ is covered by a smooth majorant on $y < 2\sigma$, $t \ge \beta_b - o(1)$, $r \le 2\sqrt{x}$ of mass $O(\sigma x/L)$ via the prime number theorem. Sending the smoothing width and then $\sigma$ to zero gives limiting pair mass $\int_{\beta_b}^{1/2} dt/(t(1-t)) = \log(1/b)$ in units of $x/L$. Combining with~\eqref{eq:sub} gives
 \begin{equation}\label{eq:final_sub}
 \liminf_{x\to\infty}\frac{A_b(x)}{H(x)}
-\ \ge\ \frac{12759}{10000} - K\log(1/b).
+\ \ge\ c_{\rm low} - K\log(1/b).
 \end{equation}
 
 \section{Directed integer certificate}\label{sec:certificate}
 
-The companion script \texttt{verify\_twin\_upper\_sieve\_cert.py} certifies all numerical inequalities in pure integer arithmetic at denominator $Q = 2^{80} = 1208925819614629174706176$ (using \texttt{Fraction}, integer \texttt{isqrt} rounded upward, and floor/ceiling integer divisions, with zero floating-point operations in any bound).
+The baseline companion script \texttt{verify\_twin\_upper\_sieve\_cert.py} certifies the baseline numerical inequalities in pure integer arithmetic at denominator $Q = 2^{80} = 1208925819614629174706176$ (using \texttt{Fraction}, integer \texttt{isqrt} rounded upward, and floor/ceiling integer divisions, with zero floating-point operations in any bound).
 
 \begin{enumerate}
 \item \emph{Logarithms and delay tables.} For $1 \le z \le 2$, $\log z = 2\sum_{j=0}^{47} v^{2j+1}/(2j+1) + R_{48}$ ($v=(z-1)/(z+1)$) with $0 \le R_{48} \le 2v^{97}/(97(1-v^2))$; larger arguments reduce by powers of $2$. The tables for $s\normF$ and $s\normf$ on a $1/4096$ mesh integrate the preceding numerator chord against $ds/s$ using alternating fourth/fifth partial sums of the weights $(j+1)\log(1+1/j)-1$ and $1-j\log(1+1/j)$. Since $s\normF$ is convex and $s\normf$ is concave (each with curvature bounded by $1$ on its nonconstant cells), the chord error $\le 1/(12n^2 j)$ is subtracted in the lower bound for $s\normf$ (for $j \ge 3n$) and added in the upper bound for $s\normF$. Beyond $s = 12$, both functions lie in $[\normf(12), \normF(12)]$. An independent $44$-term quarter-interval Taylor solver (\texttt{reference\_check}) verifies containment of both branches at $s = 4, \dots, 12$ within $10^{-12}$.
@@ -390,9 +390,11 @@ $I_{3,t}$ & $\le$ & \texttt{3409294078124169319} \\
 $G_1$ & $\ge$ & \texttt{19374509949983140898664} \\
 $K_3$ (for $U_0+2u_0$) & $\le$ & \texttt{3949437475976085820663535} \\
 $K_4$ (for $U_0+2u_0-G_1$) & $\le$ & \texttt{3930062966026102679764871} \\
+$G_1+\Delta G_1$ & $\ge$ & \texttt{19598258419400386998038} \\
+$K_{\rm W4}$ (for $U_0+2u_0-G_1-\Delta G_1$) & $\le$ & \texttt{3929839217556685433665497} \\
 \bottomrule
 \end{tabular}
-\caption{Certified rational density components ($K_4 \approx 3.2508719$).}
+\caption{Certified rational density components ($K_4 \approx 3.2508719$, $K_{\rm W4} \approx 3.2506868$).}
 \end{table}
 
 \begin{table}[ht]
@@ -410,29 +412,38 @@ $3377/5000$ ($1-1.6754$) & Ranks three and four ($K_4$) & \texttt{11457006806021
 $67539/100000$ ($1-1.67539$) & Ranks three and four ($K_4$) & \texttt{56380964408304863785} \\
 \bottomrule
 \end{tabular}
-\caption{Certified positive lower margins for $\frac{12759}{10000} - K\log(1/b)$ in~\eqref{eq:final_sub}.}
+\caption{Baseline certified positive lower margins for $\frac{12759}{10000} - K\log(1/b)$, the first choice of $c_{\rm low}$ in~\eqref{eq:final_sub}.}
 \end{table}
 
-All six margins are strictly positive; in particular, the final row gives~\eqref{eq:main_margin} and completes the proof of Theorem~\ref{thm:main}.
+All six baseline margins are strictly positive; in particular, the final row certifies the baseline Proposition $(1-1.67539)$. The delayed greedy certificate below proves the stronger main theorem.
 
-\subsection{Delayed greedy refinement}
+\subsection{Delayed greedy certificate}
 The independent driver \path{w4/verify_w4_certificate.py} uses the baseline sieve table and directed interval evaluations over the full domain of~\eqref{eq:w4_gain}. On a box, a candidate is possible unless a strict guard is refuted, and is guaranteed only when every guard holds on the whole box. Taking maxima over these two lists brackets the full old cap $M$. A box with undecided third-cube admission contributes zero to the lower sum and is included in the upper sum. Affine extrema bound both residual arguments and the cap difference. Monotonicity of $\normF$ bounds the difference by function endpoints, and convexity gives a second interval from the cap difference divided by $t_4$ and bounds on $-\normF'$. The code intersects the two intervals and multiplies by outward bounds for the weight and the ordered-cell volume. The upper tail of the sieve table uses the bounds at $12$ and a zero lower bound for the slope. Splitting coincident intervals by the number of coordinates above their common midpoint preserves the ordered partition.
 
 After $8500001$ box evaluations the outward endpoints for $\Delta G_1$ have numerators
 \[
 185080395990360007633,\qquad 311314004869422725676
 \]
-at denominator $10^{24}$. Adding the lower endpoint rounded down at denominator $Q=2^{80}$ to the baseline gain gives
+at denominator $10^{24}$. The table below uses the baseline gain plus this lower endpoint rounded down at denominator $Q=2^{80}$. The corresponding bounds are
 \[
 G_1^{\rm new}\ge \frac{19598258419400386998038}{Q},
 \qquad K^{\rm new}\le \frac{3929839217556685433665497}{Q}.
 \]
 
-\begin{proposition}[Delayed greedy improvement]
-For $b=3372/5000=0.67440$, one has $A_b(x)>0.0000466\,H(x)$ for all sufficiently large $x$. In particular Proposition $(1-1.67440)$ follows.
-\end{proposition}
-\begin{proof}
-Ibarra's Theorem~B~\cite{Ibarra2026} gives $\pi_{1,2}(x)>1.2806\,H(x)$ with the same multiplicity convention and normalization. Use this input in~\eqref{eq:sub} and the delayed greedy density bound in Section~\ref{sec:bad_pairs}. The outward logarithm enclosure in the independent certificate gives
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lccr@{}}
+\toprule
+Rule & $b$ & $c_{\rm low}$ & Margin numerator at $Q=2^{80}$ \\
+\midrule
+Delayed greedy & $3372/5000$ & $6403/5000$ & \texttt{61483810070100487491} \\
+\bottomrule
+\end{tabular}
+\caption{Certified lower margin for the main theorem.}
+\end{table}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Take $c_{\rm low}=6403/5000$ in~\eqref{eq:final_sub}, using Ibarra's Theorem~B~\cite{Ibarra2026} with the same multiplicity convention and normalization, and take $K=3929839217556685433665497/Q$ for the delayed greedy rule. With $b=3372/5000$, the outward logarithm enclosure in the independent certificate gives
 \[
 \begin{aligned}
 \liminf_{x\to\infty}\frac{A_b(x)}{H(x)}
@@ -441,10 +452,11 @@ Ibarra's Theorem~B~\cite{Ibarra2026} gives $\pi_{1,2}(x)>1.2806\,H(x)$ with the 
 &\ge \frac{61483810070100487491}{Q}>0.0000466.
 \end{aligned}
 \]
+This is exactly~\eqref{eq:main_margin}.
 \end{proof}
 
 \section*{Reproducibility and Acknowledgments}
-The standalone Python verifier \texttt{verify\_twin\_upper\_sieve\_cert.py} runs with the Python standard library alone (no external packages required) and verifies every bound in Tables~1 and~2 in approximately three minutes. The analytic derivations and certificate implementation were developed in an AI-assisted human-in-the-loop research workflow, with independent line-by-line mathematical auditing and full re-execution of the integer verifier.
+The baseline verifier \path{verify_twin_upper_sieve_cert.py} uses the Python standard library. The W4 driver \path{w4/verify_w4_certificate.py} regenerates the sieve table, compiles the C++20 evaluator (requiring \texttt{g++} with \texttt{\_\_int128} support), and replays all $8500001$ ordered boxes. Pass \path{--recompute-baseline} to rerun the original verifier as well. The analytic derivations and certificates were developed in an AI-assisted, human-directed workflow. Both verifiers were rerun in a separate audit.
 
 \begin{thebibliography}{99}
 
