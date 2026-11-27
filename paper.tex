@@ -143,7 +143,11 @@ At an admitted rank-four prefix $t = (t_1,t_2,t_3,t_4)$ with $t_4 \ge 3/100$, ex
 \begin{equation}\label{eq:rank4_guard}
 u_I + \sum_{\substack{i < j\\ i \notin I}} t_i + 2t_j < M \qquad (j \le 4,\ j \notin I).
 \end{equation}
-If no candidate satisfies~\eqref{eq:rank4_guard}, retain $J$. Since rank four is even, this update occurs without a retention test at rank four. All subsequent odd ranks use the inherited cap. In Section~\ref{sec:packing}, strictly lowered piecewise-constant versions of these ideal caps will be frozen for the arithmetic construction.
+If no candidate improves $J$ under~\eqref{eq:rank4_guard}, set $M=J$. We refer to this choice of $M$ as the baseline four-slot rule. The delayed greedy rule on the same admitted domain uses
+\begin{equation}\label{eq:w4_cap}
+W_4=\min\{5/8-3t_4/8,\ 1-2t_2\},\qquad M'=\max\{M,W_4\}.
+\end{equation}
+It takes the new branch only when $W_4>M$. For $t_4<3/100$ keep the inherited $J$. A failed third cube gives no rank-four prefix. Since rank four is even, the update occurs without a new retention test, and later odd ranks use the chosen cap. In Section~\ref{sec:packing}, strictly lowered piecewise-constant versions of these ideal rules are frozen for the arithmetic construction.
 
 \begin{lemma}[First-exit identity]\label{lem:first_exit}
 For any finite prime set and any multiplicative function $g$ satisfying $0 \le g(\ell) \le 1$, the retained prefix tree $\cT$ satisfies
@@ -166,10 +170,10 @@ For a slot index $j$, the \emph{full square} is $S_{j-1} + 2t_j$. For a selected
 For the initial checks of $J$: the first two full squares are bounded by $3t_1$, while $v(t_1) = (1+t_1)/2 > 3t_1$ holds strictly for all $t_1 < 1/5$. Moreover, a passing third cube controls both the third and fourth full squares even if the rank-four cap is subsequently raised. For $I=\{1\}$, complementary squares reduce to full squares; for $I=\{1,2\}$, the only complementary square up to rank three is a full square; for $I=\{1,2,3\}$, there is none; for $I=\{1,3\}$ and $I=\{2,3\}$, the sole extra square is explicitly guarded in the definition of $J$; and for rank four,~\eqref{eq:rank4_guard} enforces every extra square directly. These inequalities persist under appending smaller primes.
 
 \begin{lemma}[Greedy modulus packing]\label{lem:packing}
-Let $X$ be the complete product scale, and let $U$ be a selected medium-variable scale satisfying $X^{2\zeta} \le U \le X^{1/3+\zeta/2}$, with $0 < \zeta < 10^{-5}$ sufficiently small. Convert exponents to base $X$, let $\ell>1/2$ be a covering exponent, and put $D = X^{\ell - 2\zeta}$ and $A = U X^{-\zeta}$. Fix a covering reserve $\delta>4\zeta$. Require all full square exponents of the box atom to be at most $\ell-\delta$, and impose the same bound on complementary square exponents in case~(a). Assume one of the two conditions below holds.
+Let $X$ be the complete product scale, and let $U$ be a selected medium-variable scale satisfying $X^{2\zeta} \le U \le X^{1/3+\zeta/2}$, with $0 < \zeta < 10^{-5}$ sufficiently small. Convert exponents to base $X$, let $\ell>1/2$ be a covering exponent, and put $D = X^{\ell - 2\zeta}$ and $A = U X^{-\zeta}$. Fix a covering reserve $\delta>4\zeta$. Require all full square exponents of the box atom to be at most $\ell-\delta$, and impose the same bound on complementary square exponents in case~(a). Assume one of the following conditions holds, with at least $k$ slots in case~(b).
 \begin{enumerate}
 \item[(a)] $\ell < v(\beta)$ for a selected subset $I$ of upper endpoint $B = X^\beta$; or
-\item[(b)] $(1+t_1)/2<\ell<5/8-3t_3/8$ and $2t_2\le1-\ell-\delta$.
+\item[(b)] For $k\in\{3,4\}$, $(1+t_1)/2<\ell<5/8-3t_k/8$ and $2t_2\le1-\ell-\delta$. If $k=4$, also require $t_2+2t_3\le1-\ell-\delta$.
 \end{enumerate}
 Then the atom admits a partition into three modulus groups with upper endpoints $Q_1, Q_2, Q_3 \ge 1$ satisfying Pascadi's system~\cite[eq.~(4.15)]{Pascadi2025}:
 \begin{equation}\label{eq:pascadi_cond}
@@ -187,7 +191,7 @@ If $C := D/(AB) \ge 1$, place the selected slots $I$ in group two ($Q_2 = B$) an
 
 If instead $C = D/(AB) < 1$, repack \emph{all} slots greedily into $(A, D/A)$ using the full squares and leave group three empty ($Q_3 = 1$). Note that $A \ge X^\zeta \ge 1$ and $D/A \ge X^{\ell - 1/3 - 3\zeta/2} \ge 1$ since $\ell > 1/2$. Because $Q_2 = D/A < B$, the second monomial $X^{2\zeta} D^2 Q_2^3$ strictly decreases from $X^{2\zeta} D^2 B^3$, while the first becomes $U^2 (D/A) = X^{2\zeta} A D \le X^{1/3 + \ell - \zeta/2}$. Both cases give $\ell\le 5/8$, so the latter exponent is at most $23/24-\zeta/2<1-4\zeta$ for the chosen $\zeta$. (This is the same two-factor repair as~\cite[Lemma~5.6]{Pascadi2025}.)
 
-In case~(b), initialize capacities $(A, X^{b_-}, D/(AX^{b_-}))$. If the third capacity is below $1$, apply the same two-group repair into $(A, D/A)$. Otherwise, place the largest prime in group two (since $t_1 < 2\ell - 1 = b_-$). The second prime fits into group one or three because its square is at most $X^{1-\ell-\delta}<X^{1-\ell-2\zeta}$, the product of their capacities. Continue inserting slots greedily in order. If all fit, the estimates for case~(a) apply with $\beta=b_-$, since the nonstrict bounds $b_-\le\beta\le b_+$ still leave the explicit $2\zeta$ savings. At the first slot $\ell_j$ of exponent $s \le t_3$ that fits no group, adjoin $\ell_j$ to group two, obtaining a new product $B'$ with exponent in $[b_-, b_- + t_3]$. Since $b_+ - b_- = (5 - 8\ell)/3 > t_3$,~\eqref{eq:beta_interval} still holds for $B'$. Moreover, if $(a_1,a_2,a_3)$ were the partial products before $\ell_j$, then $A < a_1 X^s$ and the full square gives $a_1 a_2 a_3 X^{2s} \le D$, whence $A B' a_3 < D$ for $B' = a_2 X^s$. Thus $a_3$ fits inside $D/(A B')$, and freezing group two lets the remaining slots be packed into groups one and three via the full squares. Both monomial bounds in~\eqref{eq:pascadi_cond} follow as before.
+In case~(b), initialize capacities $(A, X^{b_-}, D/(AX^{b_-}))$. If the third capacity is below $1$, apply the same two-group repair into $(A, D/A)$. Otherwise, place the largest prime in group two (since $t_1 < 2\ell - 1 = b_-$). The second prime fits into group one or three because its square is at most $X^{1-\ell-\delta}<X^{1-\ell-2\zeta}$, the product of their capacities. For $k=4$, place the second slot in either of the groups in which it fits. After this placement the product of the unused capacities of groups one and three is $X^{1-\ell-2\zeta-t_2}>X^{2t_3}$, so the third slot can also be placed in one of them. Equality in an individual fit is allowed, and a third capacity equal to $1$ is covered by the same argument. Continue inserting slots greedily in order. If all fit, the estimates for case~(a) apply with $\beta=b_-$, since the nonstrict bounds $b_-\le\beta\le b_+$ still leave the explicit $2\zeta$ savings. Otherwise the first failed slot has index $j\ge k$ and exponent $s\le t_k$. Adjoin it to group two, whose rejection implies $B'=a_2X^s>X^{b_-}$. Since $B'\le X^{b_-+t_k}$ and $b_+-b_-=(5-8\ell)/3>t_k$, its exponent is below $b_+$. Moreover, if $(a_1,a_2,a_3)$ were the partial products before $\ell_j$, then $A < a_1 X^s$ and the full square gives $a_1 a_2 a_3 X^{2s} \le D$, whence $A B' a_3 < D$ for $B' = a_2 X^s$. Thus $a_3$ fits inside $D/(A B')$, and freezing group two lets the remaining slots be packed into groups one and three via the full squares. Both monomial bounds in~\eqref{eq:pascadi_cond} follow as before.
 \end{proof}
 
 \begin{remark}
@@ -200,11 +204,15 @@ Fix $a_*>0$, the density allowance $u_0>0$, the root cutoff $\rho'<\rho$, and th
 \item \emph{Small $t_1$ and ranks at most two.} Use a fixed cap below $1/2$ for small $t_1$. A rough prefix of rank at most two has total exponent at most $2\rho<1/2$. Both gaps allow the absolute mean value bound.
 \item \emph{Fallback.} At the third-slot tail and trimmed walls use $I=\{1\}$ and a slightly lowered $v(t_1)$. Away from small $t_1$, $v(t_1)>1/2$ uniformly, and $v(t_1)-3t_1\ge(1-5\rho')/2>0$ makes room for the first two full squares below the physical cap. Test the third cube on the interval upper endpoints as $t_1^++t_2^++3t_3^+<\lambda_{\rm phys}$. This controls full squares three and four, and later full squares follow from the later odd cubes. For $I=\{1\}$ the complementary squares are full squares.
 \item \emph{Compact third-rank cells.} Keep a selected set only with a fixed gap in its extra guards. Lower its physical cap by less than these gaps. Trim near ties so that the physical cap still exceeds the fallback cap. The first two full squares are controlled by the fallback bound and the other full squares by passing odd cubes. On a $W$ cell choose $\ell$ above both $\lambda_{\rm phys}$ and $(1+t_1)/2$ and below both $5/8-3t_3/8$ and $1-2t_2$ throughout the cell. The second upper bound gives a separate gap in $2t_2<1-\ell$.
-\item \emph{Compact fourth-rank cells.} Trim near equality in~\eqref{eq:rank4_guard} and in the increase over the inherited cap. The new cap may be lowered slightly while preserving these gaps. The inherited passing third cube controls full squares three and four. The new cap controls subsequent odd cubes. The extra complementary squares through slot four follow from~\eqref{eq:rank4_guard}; beyond the last selected slot they are full squares. Elsewhere retain the parent rule.
+\item \emph{Compact fourth-rank cells.} Trim near equality in~\eqref{eq:rank4_guard} and in the increase over the inherited cap. The new cap may be lowered slightly while preserving these gaps. The inherited passing third cube controls full squares three and four. The new cap controls subsequent odd cubes. For a subset branch the extra complementary squares through slot four follow from~\eqref{eq:rank4_guard}, and beyond the last selected slot they are full squares. For~\eqref{eq:w4_cap} freeze the delayed greedy branch only with a strict gain over $M$. Choose $\ell$ above the physical cap and $(1+t_1)/2$ and below both planes of $W_4$ with positive gaps, as $W_4>M\ge J\ge(1+t_1)/2$. The second plane leaves a gap in $2t_2<1-\ell$. Before rounding, ordering and the passing third cube give
+\[
+\tfrac53(t_2+2t_3)\le t_1+t_2+3t_3<J\le 5/8.
+\]
+Since $W_4\le 5/8-9/800$, there is also a uniform gap in $t_2+2t_3<1-\ell$. These are the two extra reserves for case~(b) with $k=4$. On ties and trimmed cells keep an admissible baseline rule. A failed third cube is never reinstated at rank four.
 \end{itemize}
 The gap $\ell-\lambda_{\rm phys}$ makes each square bound by the physical cap strict relative to $\ell$. On the finitely many retained cells there is a common $\delta_1>0$ smaller than these covering gaps, the guard and analytic endpoint gaps, and the gaps for the absolute mean value bound. Trimming switching walls and using the fallback at small $t_3$ have arbitrarily small density cost by Section~\ref{sec:density}. The approximation retains a positive gap above $t_1+t_2$, since $J-t_1-t_2\ge(1-3\rho)/2$ before lowering.
 
-Put $\delta=\delta_1/4$, choose $0<\zeta<\min(10^{-5},\delta/4,a_*/24)$, then take $\eta,\epsilon>0$ small enough for the packing and attachment. At fixed $\eta$ the rough tree on primes at least $x^\eta$ has bounded rank. Refine the common interval alphabet so that upper endpoints use at most $\delta_1/4$ of the initial covering and guard gaps. Test odd cubes at the physical caps on those endpoints and retain even children automatically. Finally choose $\kappa$ as in Proposition~\ref{prop:distribution}. On charts $X\gg x^{1-\kappa}$, the factor $\log x/\log X=1+O(\kappa+L^{-1})$ uses at most another $\delta_1/4$ of these gaps. For later full squares, rescale the bound by the physical cap directly, using that the cap is bounded. The resulting base-$X$ atoms satisfy the reserve $\delta$ of Lemma~\ref{lem:packing}, including $2t_2\le1-\ell-\delta$ in case~(b).
+Put $\delta=\delta_1/4$, choose $0<\zeta<\min(10^{-5},\delta/4,a_*/24)$, then take $\eta,\epsilon>0$ small enough for the packing and attachment. At fixed $\eta$ the rough tree on primes at least $x^\eta$ has bounded rank. Refine the common interval alphabet so that upper endpoints use at most $\delta_1/4$ of the initial covering and guard gaps. Test odd cubes at the physical caps on those endpoints and retain even children automatically. Finally choose $\kappa$ as in Proposition~\ref{prop:distribution}. On charts $X\gg x^{1-\kappa}$, the factor $\log x/\log X=1+O(\kappa+L^{-1})$ uses at most another $\delta_1/4$ of these gaps. For later full squares, rescale the bound by the physical cap directly, using that the cap is bounded. The resulting base-$X$ atoms satisfy the reserve $\delta$ of Lemma~\ref{lem:packing}, including $2t_2\le1-\ell-\delta$ in case~(b) and $t_2+2t_3\le1-\ell-\delta$ when $k=4$.
 
 For each rough atom of sign $+$ or $-$, attach the ordinary upper ($\lambda^+$) or lower ($\lambda^-$) small-prime weights on $\ell < x^\eta$ of support at most $x^{\sqrt{\eta}}$ and $|\lambda^\pm| \le 1$. By the fundamental lemma, small-prime density equals $V(x^\eta)(1 + O(e^{-c/\sqrt{\eta}}))$ uniformly in $x$, while the absolute rough density is $O(1/\eta)$, giving attachment error $O(e^{-c/\sqrt{\eta}}\eta^{-2} C_2/L)$. Moreover, since
 \[
@@ -325,9 +333,24 @@ G_1 = 2\int_{\mathcal{A}}
 \end{equation}
 where $\mathcal{A}$ consists of ordered rank-four prefixes passing the third cube and admitting a strict improvement~\eqref{eq:rank4_guard}. Note $(J-S_4)/t_4 > 1$ because $J > S_2 + 3t_3$ implies $J - S_4 > 2t_3 - t_4 \ge t_4$.
 
+For the delayed greedy rule let $\mathcal{A}_4$ be the full ordered domain with $t_4\ge3/100$ that passes the third cube, including prefixes with $M=J$. Its additional density saving is
+\begin{equation}\label{eq:w4_gain}
+\Delta G_1=2\int_{\mathcal{A}_4}
+\frac{\normF((M-S_4)/t_4)-\normF((M'-S_4)/t_4)}
+     {t_1t_2t_3t_4^2}\,d\mathbf t.
+\end{equation}
+This is nonnegative by monotonicity, vanishes when $W_4\le M$, and telescopes with~\eqref{eq:G1}. Thus $G_1^{\rm new}=G_1+\Delta G_1$.
+
+The same $2u_0$ budget applies to the combined rule. Choose the small-$t_1$ and small-$t_3$ cutoffs below $3/100$. The added branch then lies entirely in the compact four-slot domain. The cube, guard, plane and switching comparisons there are affine on finitely many cells. Equality walls of nonidentical affine forms have measure zero. Identically equal forms are resolved by the strict tests and the baseline tie rule. The residual sieve functions are continuous for admitted arguments, and the density integrands on this domain are uniformly bounded because $t_i\ge3/100$ and $\normF(s)\le1$ for $s\ge1$. Trim narrow wall neighborhoods, restrict the root to $\rho'<\rho$, and lower and freeze the physical caps in the remaining cells. Dominated convergence on the compact domain, together with the preceding tail estimates, makes the \emph{combined} density cost smaller than $u_0$ in units of $C_2/L$. On trimmed cells use an admissible baseline policy. With these choices fixed, choose $\eta$ to spend at most $u_0/2$ on the small-prime attachment, and refine the common alphabet at fixed $\eta$ to spend at most $u_0/2$ on endpoint rounding, as above. The base-$X$ conversion only consumes packing reserve. In particular,
+\[
+\limsup_{x\to\infty}\frac{L}{C_2}\sum_d\frac{\rho_x(d)}{\varphi(d)}
+\le U_0+2u_0-G_1-\Delta G_1
+\]
+for the delayed greedy rule.
+
 \section{Application to $B_b(x)$ and proof of Theorem~\ref{thm:main}}\label{sec:bad_pairs}
 
-Let $K$ be any upper bound for $U_0 + 2u_0$ (rank three) or $U_0 + 2u_0 - G_1$ (ranks three and four). For every row of the certificate table fix $a_*=1/3$ before constructing $\rho_x$, since $b/(1+b)>1/3$. Discard $p<x/L^B$ ($B>4$) from $B_b(x)$ at cost $O(x/L^B)$. For the remaining pairs, $rq\ge x/L^B$ and $r>(rq)^{b/(1+b)}$ give $q\ge r\gg x^{a_*}$, and $p>x^{\rho'}$. Applying Lemma~\ref{lem:first_exit} pointwise to $rq - 2$ and majorizing the pair region by smooth outer weights of polylogarithmic Euler norms, Proposition~\ref{prop:distribution} yields an upper bound controlled by the unrestricted pair mass times $\sum_d \rho_x(d)/\varphi(d)$: replacing $\ind_{(rq,d)=1}$ by $1$ costs $O(L x^{-a_*})$ relative to the pair mass, because $\sum_{d \le 2x,\, \ell \mid d} 1/\varphi(d) \ll L/\ell$ for each $\ell \in \{r,q\}$.
+Let $K$ be an upper bound for the density of the chosen rule, in units of $C_2/L$. These bounds are $U_0+2u_0$ for rank three, $U_0+2u_0-G_1$ for the baseline four-slot rule, and $U_0+2u_0-G_1-\Delta G_1$ for the delayed greedy rule. For every row of the certificate table fix $a_*=1/3$ before constructing $\rho_x$, since $b/(1+b)>1/3$. Discard $p<x/L^B$ ($B>4$) from $B_b(x)$ at cost $O(x/L^B)$. For the remaining pairs, $rq\ge x/L^B$ and $r>(rq)^{b/(1+b)}$ give $q\ge r\gg x^{a_*}$, and $p>x^{\rho'}$. Applying Lemma~\ref{lem:first_exit} pointwise to $rq - 2$ and majorizing the pair region by smooth outer weights of polylogarithmic Euler norms, Proposition~\ref{prop:distribution} yields an upper bound controlled by the unrestricted pair mass times $\sum_d \rho_x(d)/\varphi(d)$: replacing $\ind_{(rq,d)=1}$ by $1$ costs $O(L x^{-a_*})$ relative to the pair mass, because $\sum_{d \le 2x,\, \ell \mid d} 1/\varphi(d) \ll L/\ell$ for each $\ell \in \{r,q\}$.
 
 In coordinates $t = \log r/L$ and $y = rq/x$, on $y \ge \sigma > 0$ the inequalities $q^b < r \le q$ and $rq \le x+2$ match $\beta_b := b/(1+b) < t \le 1/2$ up to $O_\sigma(1/L)$, while $y \le \sigma$ is covered by a smooth majorant on $y < 2\sigma$, $t \ge \beta_b - o(1)$, $r \le 2\sqrt{x}$ of mass $O(\sigma x/L)$ via the prime number theorem. Sending the smoothing width and then $\sigma$ to zero gives limiting pair mass $\int_{\beta_b}^{1/2} dt/(t(1-t)) = \log(1/b)$ in units of $x/L$. Combining with~\eqref{eq:sub} gives
 \begin{equation}\label{eq:final_sub}
@@ -392,6 +415,34 @@ $67539/100000$ ($1-1.67539$) & Ranks three and four ($K_4$) & \texttt{5638096440
 
 All six margins are strictly positive; in particular, the final row gives~\eqref{eq:main_margin} and completes the proof of Theorem~\ref{thm:main}.
 
+\subsection{Delayed greedy refinement}
+The independent driver \path{w4/verify_w4_certificate.py} uses the baseline sieve table and directed interval evaluations over the full domain of~\eqref{eq:w4_gain}. On a box, a candidate is possible unless a strict guard is refuted, and is guaranteed only when every guard holds on the whole box. Taking maxima over these two lists brackets the full old cap $M$. A box with undecided third-cube admission contributes zero to the lower sum and is included in the upper sum. Affine extrema bound both residual arguments and the cap difference. Monotonicity of $\normF$ bounds the difference by function endpoints, and convexity gives a second interval from the cap difference divided by $t_4$ and bounds on $-\normF'$. The code intersects the two intervals and multiplies by outward bounds for the weight and the ordered-cell volume. The upper tail of the sieve table uses the bounds at $12$ and a zero lower bound for the slope. Splitting coincident intervals by the number of coordinates above their common midpoint preserves the ordered partition.
+
+After $8500001$ box evaluations the outward endpoints for $\Delta G_1$ have numerators
+\[
+185080395990360007633,\qquad 311314004869422725676
+\]
+at denominator $10^{24}$. Adding the lower endpoint rounded down at denominator $Q=2^{80}$ to the baseline gain gives
+\[
+G_1^{\rm new}\ge \frac{19598258419400386998038}{Q},
+\qquad K^{\rm new}\le \frac{3929839217556685433665497}{Q}.
+\]
+
+\begin{proposition}[Delayed greedy improvement]
+For $b=3372/5000=0.67440$, one has $A_b(x)>0.0000466\,H(x)$ for all sufficiently large $x$. In particular Proposition $(1-1.67440)$ follows.
+\end{proposition}
+\begin{proof}
+Ibarra's Theorem~B~\cite{Ibarra2026} gives $\pi_{1,2}(x)>1.2806\,H(x)$ with the same multiplicity convention and normalization. Use this input in~\eqref{eq:sub} and the delayed greedy density bound in Section~\ref{sec:bad_pairs}. The outward logarithm enclosure in the independent certificate gives
+\[
+\begin{aligned}
+\liminf_{x\to\infty}\frac{A_b(x)}{H(x)}
+&\ge \frac{6403}{5000}
+-\frac{3929839217556685433665497}{Q}\log(1/b)\\
+&\ge \frac{61483810070100487491}{Q}>0.0000466.
+\end{aligned}
+\]
+\end{proof}
+
 \section*{Reproducibility and Acknowledgments}
 The standalone Python verifier \texttt{verify\_twin\_upper\_sieve\_cert.py} runs with the Python standard library alone (no external packages required) and verifies every bound in Tables~1 and~2 in approximately three minutes. The analytic derivations and certificate implementation were developed in an AI-assisted human-in-the-loop research workflow, with independent line-by-line mathematical auditing and full re-execution of the integer verifier.
 
@@ -427,6 +478,11 @@ Acta Arith.~\textbf{36} (1980), 171--202.
 H.~Iwaniec,
 \emph{A new form of the error term in the linear sieve},
 Acta Arith.~\textbf{37} (1980), 307--320.
+
+\bibitem{Ibarra2026}
+K.~Ibarra,
+\emph{Four sieve bounds for Goldbach representations and twin primes},
+Zenodo preprint, version~1 (2026), \url{https://doi.org/10.5281/zenodo.24545780}.
 
 \bibitem{RunboLi2026}
 R.~Li,

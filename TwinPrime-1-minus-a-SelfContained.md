@@ -287,3 +287,45 @@ The compact integrals use 435001 and 700001 box/simplex evaluations respectively
 | \(169/250\) | ranks three and four | 3604340579464536079328 |
 | \(3377/5000\) | ranks three and four | 114570068060210771664 |
 | \(67539/100000\) | ranks three and four | 56380964408304863785 |
+
+## 8. Delayed four-slot refinement
+
+The original rank-four cap \(M\) is the maximum of \(J\) and every tent allowed by (3). At a rank-four prefix passing the third cube with \(t_4\ge3/100\), use \(M'=\max(M,W_4)\), where
+\[
+W_4=\min(5/8-3t_4/8,\,1-2t_2).
+\]
+If \(W_4\le M\) use the original assignment. Prefixes with \(t_4<3/100\) inherit \(J\), and a failed third cube has no rank-four child. Every test remains at odd rank. For any valid old candidate \(\min(p_1,p_2)\), \(W_4>\min(p_1,p_2)\) exactly when at least one \(p_i\) is below both planes of \(W_4\). Apply this to all valid candidates, including the inherited rule, to determine all branch switches.
+
+### Packing after the fourth slot
+
+On a cell with a strict improvement take a covering exponent \(\ell<W_4\), above the frozen physical cap and \((1+t_1)/2\). This is possible because \(W_4>M\ge J\ge (1+t_1)/2\). The second plane of \(W_4\) ensures a reserve in \(2t_2<1-\ell\). The passed cube and ordering give \(\frac53(t_2+2t_3)\le t_1+t_2+3t_3<J\le5/8\), so \(t_2+2t_3<3/8\). Since \(W_4\le5/8-9/800\), there is also a fixed reserve in \(t_2+2t_3<1-\ell\). Both reserves survive rounding and the change to base \(X\) by the parameter choices in §3.
+
+Start with \(A,X^{b_-},D/(AX^{b_-})\) as in §3. If the last capacity is below 1, the two-group repair applies by the full squares. Otherwise put the first slot in group two and the second in group one or three. Their remaining capacity product is \(X^{1-\ell-2\zeta-t_2}>X^{2t_3}\), so the third slot fits one of these groups. A capacity equal to 1 and exact fits are allowed. If all subsequent slots fit, the original assignment has \(\beta=b_-\). At first failure \(j\ge4\), let \(s\) be the size of the failed slot, and \(a_1,a_2,a_3\) the current products. Group two rejects it, so \(B'=a_2s>X^{b_-}\). Also \(B'\le X^{b_-+t_4}<X^{b_+}\). Group one rejects it, so \(A<a_1s\). The full square gives \(a_1a_2a_3s^2\le D\), whence \(AB'a_3<D\). Freeze the second group at \(B'\) and reset the third capacity to \(D/(AB')\). For every later slot the full square prevents simultaneous rejection by the first and third groups. The full squares through slot four follow from the inherited tests, and later ones follow from the odd cubes at the new cap. The two analytic monomials are bounded as in (5), with the same explicit \(2\zeta\) savings for \(b_-\le\beta\le b_+\).
+
+### Density and the approximation allowance
+
+Let \(\mathcal A_4\) be the full ordered domain with \(t_4\ge3/100\) passing the third cube, including the cells where \(M=J\). The extra saving is
+\[
+\Delta G_1=2\int_{\mathcal A_4}
+\frac{\mathcal F((M-S_4)/t_4)-\mathcal F((M'-S_4)/t_4)}
+{t_1t_2t_3t_4^2}\,d\mathbf t .
+\]
+This nonnegative difference telescopes with (17), giving \(G_1^{\rm new}=G_1+\Delta G_1\).
+
+Take the small-\(t_1\) and small-\(t_3\) cutoffs below \(3/100\). The new domain is compact and its residual density integrands are bounded, since the residual arguments exceed 1 and \(t_i\ge3/100\). The guard and switch walls are finite unions of affine equality sets. Nonidentical forms give null walls, while identical forms are resolved by the strict tests and the baseline tie rule. Use an admissible baseline rule on trimmed cells. By dominated convergence on the compact domain and the existing tail estimates, the combined cost of trimming, restricting the root, and lowering and freezing caps is less than \(u_0\) in normalized density. With this policy fixed, choose \(\eta\) for attachment cost at most \(u_0/2\), then refine the alphabet at fixed \(\eta\) for rounding cost at most \(u_0/2\). The base-\(X\) conversion consumes packing reserve. The density limit superior is at most \(U_0+2u_0-G_1-\Delta G_1\).
+
+### Exact verification and exponent
+
+The independent [W4 verifier](w4/verify_w4_certificate.py) brackets the full baseline \(M\) using possible and guaranteed old candidates over each ordered box. Uncertain third-cube admission contributes zero to the lower sum and remains in the upper sum. It bounds the difference both by residual function endpoints and by the cap difference times slope bounds, then multiplies by directed bounds for the weight and ordered volume. The full derivation and reproduction instructions are in [W4-certificate-review.md](W4-certificate-review.md).
+
+After 8500001 box evaluations the outward endpoints for \(\Delta G_1\) have numerators \(185080395990360007633\) and \(311314004869422725676\) at denominator \(10^{24}\). At \(Q=2^{80}\), adding the lower endpoint rounded down to the old gain gives
+\[
+G_1^{\rm new}\ge19598258419400386998038/Q,\qquad
+K^{\rm new}\le3929839217556685433665497/Q.
+\]
+[Ibarra, Theorem B](https://doi.org/10.5281/zenodo.24545780) supplies \(\pi_{1,2}(x)>1.2806\,H(x)\) with the same multiplicity convention and normalization. Apply the subtraction in §6 with \(c=6403/5000\). For \(b=3372/5000=0.67440\), the outward logarithm bound gives
+\[
+\liminf_{x\to\infty}A_b(x)/H(x)
+\ge61483810070100487491/Q>0.0000466.
+\]
+Thus Proposition \((1-1.67440)\) holds with the stated density.
