@@ -2,7 +2,7 @@
 
 **Author:** Wei Lindong (Independent Researcher, [ORCID 0009-0008-9652-2845](https://orcid.org/0009-0008-9652-2845)) · **Code license:** MIT · **Manuscript / PDF license:** CC BY 4.0
 
-**Release candidate v1.0.3.** For all sufficiently large $x$, more than
+**Version 1.0.3.** For all sufficiently large $x$, more than
 $0.0000466\,C_2x/(\log x)^2$ primes $p\le x$ satisfy
 $$
 p+2=rq,\qquad q\text{ prime},\qquad r\in\{1\}\cup\mathbb P,
@@ -77,8 +77,9 @@ rerun in a separate audit.
 ## Archive and citation
 
 Source repository: [wellingtonthu/twin-primes-1-67539](https://github.com/wellingtonthu/twin-primes-1-67539).
-The previous published
-$1-1.67539$ manuscript is archived at [Zenodo v1.0.2](https://doi.org/10.5281/zenodo.24552165)
+This release is archived as [Zenodo v1.0.3](https://doi.org/10.5281/zenodo.24582753).
+The previous published $1-1.67539$ manuscript is archived at
+[Zenodo v1.0.2](https://doi.org/10.5281/zenodo.24552165)
 and [aiXiv v1.3](https://aixiv.science/pdf/aixiv.261125.000002v1.3.pdf).
 Use the [concept DOI](https://doi.org/10.5281/zenodo.24539532) for the project across archived
-versions. See [CITATION.cff](CITATION.cff) for citing this release candidate.
+versions. See [CITATION.cff](CITATION.cff) for citing this release.

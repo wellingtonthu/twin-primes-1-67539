@@ -35,9 +35,9 @@ For 1 <= a <= 2, Proposition (1-a) asserts that there exist infinitely many prim
 
 For $1 \le a \le 2$, Proposition $(1-a)$ asserts that there exist infinitely many primes $p$ such that $p+2 = rq$ with $q$ prime, $r=1$ or prime, and $r \le q^{a-1}$. Li and Liu recently established Proposition $(1-1.75)$ unconditionally. By combining Ibarra's lower bound $\pi_{1,2}(x) > 1.2806\,C_2 x/(\log x)^2$ (improving Runbo Li's published $1.2759$ bound) with a self-contained positive upper-sieve majorant at distribution level $5/8$, a delayed four-slot refinement, and directed integer certificates, we prove Proposition $(1-1.67440)$ unconditionally. More precisely, writing $A_b(x)$ for the number of primes $p \le x$ satisfying $p+2 = rq$ with $r \le q^b$, we obtain $A_{3372/5000}(x) > 0.0000466\,C_2 x/(\log x)^2$ for all sufficiently large $x$. We also record an elementary two-factor shortcut yielding Proposition $(1-1.7078)$, a rank-three baseline yielding Proposition $(1-1.6767)$, and the baseline four-slot bound $(1-1.67539)$.
 
-## Release candidate
+## Current release
 
-Version v1.0.3, prepared November 27, 2026. The delayed four-slot sieve and
+Zenodo `v1.0.3`, [2026-11-27](https://doi.org/10.5281/zenodo.24582753). The delayed four-slot sieve and
 [Ibarra's Chen lower bound](https://doi.org/10.5281/zenodo.24545780) improve the
 baseline from 1.67539 to 1.67440 with the same stated density lower bound.
 
@@ -59,7 +59,7 @@ baseline from 1.67539 to 1.67440 with the same stated density lower bound.
 
 ## Comments field
 
-14 pages. Directed integer certificates for Proposition (1-1.67440). The W4 replay uses Python 3.10+ and a C++20 compiler with 128-bit integer support. Repository: https://github.com/wellingtonthu/twin-primes-1-67539
+14 pages. Directed integer certificates for Proposition (1-1.67440). The W4 replay uses Python 3.10+ and a C++20 compiler with 128-bit integer support. Repository: https://github.com/wellingtonthu/twin-primes-1-67539 · DOI: https://doi.org/10.5281/zenodo.24582753 (v1.0.3)
 
 ## Declarations
 

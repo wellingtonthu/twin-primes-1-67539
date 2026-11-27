@@ -5,6 +5,9 @@ type: software
 repository-code: "https://github.com/wellingtonthu/twin-primes-1-67539"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.24582753"
+    description: "Version DOI for this release."
+  - type: doi
     value: "10.5281/zenodo.24539532"
     description: "Concept DOI for the archived project versions."
 authors:
